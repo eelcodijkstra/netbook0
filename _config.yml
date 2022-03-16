@@ -30,3 +30,9 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+  
+sphinx:
+  extra_extensions:
+  - sphinx.ext.todo
+  config:
+    todo_include_todos: true

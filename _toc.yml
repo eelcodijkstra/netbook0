@@ -4,6 +4,8 @@
 format: jb-book
 root: intro
 chapters:
+- file: thuisrouter
+- file: adressering
 - file: opdrachten
 - file: toetsvragen
 - file: todos
