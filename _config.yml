@@ -34,5 +34,14 @@ html:
 sphinx:
   extra_extensions:
   - sphinx.ext.todo
+  - sphinx_exercise
+  local_extensions:
+    helloworld: ./ext
+    mchoice: ./ext
+    dragndrop: ./ext
+    fitb: ./ext
+    parsons: ./ext
   config:
     todo_include_todos: true
+    
+exclude_patterns: [ext/*,_build, Thumbs.db, .DS_Store, ".ipynb_checkpoints/*", "**.ipynb_checkpoints"]

@@ -3,6 +3,8 @@
 notebooks/.DS_Store
 notebooks/.ipynb_checkpoints/
 notebooks/_build/
+ext/sphinx-exercise
+ext/__pycache__
 elm-stuff/*
 .obsidian
 _build/*
