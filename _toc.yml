@@ -6,7 +6,9 @@ root: intro
 chapters:
 - file: thuisrouter
 - file: adressering
+- file: internet
 - file: opdrachten
 - file: toetsvragen
 - file: uitwerkingen
 - file: todos
+- file: glossary
