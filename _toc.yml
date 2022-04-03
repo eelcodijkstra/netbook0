@@ -4,8 +4,10 @@
 format: jb-book
 root: intro
 chapters:
+- file: lokaal-netwerk
 - file: thuisrouter
 - file: adressering
+- file: vpn
 - file: internet
 - file: opdrachten
 - file: toetsvragen

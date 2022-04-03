@@ -15,62 +15,6 @@ LAN, WAN, thuisrouter, modem, firewall, router, gateway, lokaal internetadres, p
     * pakketcommunicatie
     * (tcp: verbindingsgerichte communicatie)
     
-In dit gedeelte behandelen we het lokale netwerk, zoals je dat bijvoorbeeld thuis of op school tegenkomt. 
-Een typisch thuisnetwerk kan er zo uitzien:
-
-```{figure} images/ip-lan.png
-:width: 800px
-
-Thuisnetwerk op IP-niveau
-```
-
-```{margin}
-**LAN**: Local Area Network, **WAN**: Wide Are network.
-```
-
-Je ziet hier een desktop PC, een laptop, een smartphone, een netwerkprinter en een IoT-hub (bijvoorbeeld voor slimme verlichting) in het lokale netwerk. De thuisrouter of *residential gateway* verbindt het lokale netwerk (LAN) via de verbinding met het netwerk (WAN) van de *internet service provider* (ISP), met het publieke internet.
-
-De apparaten die het netwerk gebruiken voor communicatie met elkaar en met apparaten in het internet heten *eindapparaten*. Deze hebben geen rol in het netwerk.
-
-De thuisrouter is een voorbeel van een *netwerkapparaat*. Deze netwerkapparaten zorgen ervoor dat het netwerk goed functioneert.
-
-
-```{margin} 
-Voor de lokale communicatie zou je ook een ander protocol kunnen gebruiken, maar omdat je voor de communicatie met de buitenwereld toch al het IP-protocol gebruikt, kun je dat ook net zo goed lokaal gebruiken.
-```
-
-Deze router of gateway zorgt ervoor dat lokale IP-pakketten bedoeld voor het publieke internet, via de ISP-verbinding naar de volgende router verstuurd worden, om via een aantal router-stappen zo op de bestemming aan te komen.
-IP-pakketten vanuit het publieke internet worden naar het juiste lokale apparaat gestuurd.
-
-Bovenstaande figuur geeft het netwerk weer op het IP-niveau: de lokale apparaten communiceren via het internet protocol met elkaar en met de buitenwereld.
-
-Op het niveau van de *fysieke verbindingen* ziet het netwerk er iets anders uit:
-
-```{figure} images/mac-lan.png
-:width: 800px
-
-Thuisnetwerk op fysiek (MAC) niveau
-```
-
-Sommige apparaten zijn via een Ethernet-kabel verbonden in het netwerk.
-Omdat de thuisrouter niet voldoende Ethernet-aansluitingen heeft, is er een *switch* gebruikt om het aantal Ethernet-verbindingen uit te breiden.
-
-Via het WiFi basisstation (modem) zijn de tablet, smartphone en laptop draadloos aangesloten op het lokale netwerk.
-
-De eigenlijke communicatie in het lokale netwerk gebeurt op dit fysieke niveau, op basis van Ethernet- en WiFi frames waarin IP-pakketten ingepakt zijn.
-Voor de adressering gebruikt dit lokale netwerk de Ethernet- en WiFi-MAC adressen. (Deze hebben hetzelfde formaat.)
-
-```{margin}
-Enkelvoud: medium, meervoud: media
-```
-
-Voor *fysieke verbindingen* kunnen we verschillende *media* gebruiken, bijvoorbeeld lokaal Ethernet en WiFi, en glasvezel of coaxkabel met de ISP.
-Elk medium heeft zijn eigen voor- en nadelen. Bijvoorbeeld WiFi is geschikt voor mobiele apparaten, maar is minder veilig en betrouwbaar dan een bedrade Ethernet- of glasvezelverbinding. 
-
-We zien op dit MAC-niveau ook meer netwerkapparaten, zoals de *switch* en het *WiFi basisstation*.
-
-Het eigenlijke netwerk bestaat uit fysieke verbindingen (*media*) en *netwerkapparaten*.
-
 
 
 Het lokale netwerk verbindt de lokale *eindapparaten*, zoals computers, printers, en IoT-apparaten, met elkaar, en, via de router ("residential gateway") met het publieke internet.
