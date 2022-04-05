@@ -17,4 +17,7 @@ Switch
 Modem
   Modulator/demodulator: past het (data)signaal aan aan het betreffende medium.
 
+Host
+  Een computer die verbonden is in het (internet)netwerk, en die als bron of bestemming van netwerkverkeer kan dienen. (Opmerking: een eindapparaat is altijd een "host"; netwerkapparaten met bijvoorbeeld een web-interface, zoals een thuisrouter, zijn dat ook.) Een host heeft een adres in het netwerk.
+
 ```
