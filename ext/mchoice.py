@@ -51,6 +51,8 @@ class MChoiceDirective(SphinxDirective):
 
     def run(self):
         logger.info("run-mchoice")
+        if not ("correct" in self.options):
+            raise self.error("multiple choice: 'correct' option missing")
         
         title_node = nodes.title(text="Toetsvraag")
         

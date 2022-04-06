@@ -6,7 +6,7 @@ root: intro
 chapters:
 - file: lokaal-netwerk
 - file: thuisrouter
-- file: adressering
+- file: adressering-1
 - file: vpn
 - file: internet
 - file: opdrachten
