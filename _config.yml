@@ -34,9 +34,9 @@ html:
 sphinx:
   extra_extensions:
   - sphinx.ext.todo
-  - sphinx_exercise
+#  - sphinx_exercise
   local_extensions:
-    helloworld: ./ext
+    sphinx_exercise: ./ext/sphinx-exercise
     mchoice: ./ext
     dragndrop: ./ext
     fitb: ./ext
