@@ -54,15 +54,16 @@ class MChoiceDirective(SphinxDirective):
         if not ("correct" in self.options):
             raise self.error("multiple choice: 'correct' option missing")
         
-        title_node = nodes.title(text="Toetsvraag")
-        
         # Parse custom subtitle option
         if self.arguments != []:
+            title_node = nodes.title(text="")
             subtitle = nodes.inline()
             subtitle_text = f" - {self.arguments[0]}"
             subtitle_nodes, _ = self.state.inline_text(subtitle_text, self.lineno)
             subtitle.extend(subtitle_nodes)
             title_node += subtitle
+        else:
+            title_node = nodes.title(text=" ")
  
         content_node = nodes.section(ids=["question"])  # question-part
         self.state.nested_parse(self.content, self.content_offset, content_node)
@@ -72,7 +73,7 @@ class MChoiceDirective(SphinxDirective):
         if not(len(content_node) > 0 and isinstance(content_node[-1], nodes.bullet_list)):
             raise self.error("multiple choice: answer list missing")
             
-        self.addPrefix("MC-" + self.arguments[0] + ": ", content_node)
+ #       self.addPrefix("MC-" + self.arguments[0] + ": ", content_node)
             
         bulletlist = content_node[-1]   # answer list
         content_node.pop()              # remove bullet list
@@ -119,7 +120,7 @@ class MChoiceDirective(SphinxDirective):
 
         mcnode.extend([title_node, content_node, answerlist, feedbacklist])
         mcnode["data-correct"] = self.options["correct"]
-        mcnode["mchoice-title"] = self.arguments[0]
+#        mcnode["mchoice-title"] = self.arguments[0]
 
         return [mcnode]
 
@@ -176,15 +177,26 @@ def visit_mcfeedbackitem (self, node):
 def depart_mcfeedbackitem (self, node):
     self.body.append('</li>\n')
     
+def init_numfig(app, config):
+    """Initialize numfig"""
+
+    config["numfig"] = True
+    numfig_format = {"assessment": "Toetsvraag %s"}
+    # Merge with current sphinx settings
+    numfig_format.update(config.numfig_format)
+    config.numfig_format = numfig_format
+    
 
 def setup(app):
     logger.info("setup-mchoice")
+    
+    app.connect("config-inited", init_numfig)  # event order - 1
     
     app.add_js_file("js/mchoice.js")
     
     app.add_directive("mchoice", MChoiceDirective)
     
-    app.add_node(mchoicenode, html=(visit_mchoicenode, depart_mchoicenode))
+    app.add_enumerable_node(mchoicenode, "assessment", None, html=(visit_mchoicenode, depart_mchoicenode))
     app.add_node(MChoiceQuestion, html=(visit_mcquestion, depart_mcquestion) )
     app.add_node(MCAnswerItem, html=(visit_mcanswer, depart_mcanswer))
     app.add_node(MCAnswerList, html=(visit_mcanswerlist, depart_mcanswerlist))

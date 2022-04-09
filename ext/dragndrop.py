@@ -50,15 +50,16 @@ class DragndropDirective(SphinxDirective):
     def run(self):
         logger.info("run-dragndrop")
         
-        title_node = nodes.title(text="Toetsvraag")
-        
         # Parse custom subtitle option
         if self.arguments != []:
+            title_node = nodes.title(text="")
             subtitle = nodes.inline()
             subtitle_text = f" - {self.arguments[0]}"
             subtitle_nodes, _ = self.state.inline_text(subtitle_text, self.lineno)
             subtitle.extend(subtitle_nodes)
             title_node += subtitle
+        else:
+            title_node = nodes.title(text=" ")
 
         content_node = nodes.section(ids=["question"])  # question-part
         self.state.nested_parse(self.content, self.content_offset, content_node)
@@ -117,8 +118,6 @@ class DragndropDirective(SphinxDirective):
         dndnode.source, dndnode.line = self.state_machine.get_source_and_line(self.lineno)
 
         dndnode.extend([title_node, content_node, sourcelist, targetlist])
-        dndnode["dnd-title"] = self.arguments[0]
-
         return [dndnode]
     
 def visit_dragndropnode (self, node):
@@ -168,7 +167,7 @@ def setup(app):
     
     app.add_directive("dragndrop", DragndropDirective)
     
-    app.add_node(dragndropnode, html=(visit_dragndropnode, depart_dragndropnode))
+    app.add_enumerable_node(dragndropnode, "assessment", None, html=(visit_dragndropnode, depart_dragndropnode))
     app.add_node(DragndropQuestion, html=(visit_dndquestion, depart_dndquestion) )
     app.add_node(DragndropSourceItem, html=(visit_dndsourceitem, depart_dndsourceitem))
     app.add_node(DragndropSourceList, html=(visit_dndsourcelist, depart_dndsourcelist))

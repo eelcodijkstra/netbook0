@@ -3,14 +3,17 @@
 
 format: jb-book
 root: intro
+options:
+  numbered: True
 chapters:
 - file: lokaal-netwerk
-- file: thuisrouter
-- file: adressering-1
-- file: vpn
-- file: internet
-- file: opdrachten
-- file: toetsvragen
+  sections:
+  - file: thuisrouter
+  - file: adressering-1
+  - file: vpn
+  - file: internet
+  - file: opdrachten
+  - file: toetsvragen
 - file: uitwerkingen
 - file: rest
 - file: todos

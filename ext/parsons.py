@@ -43,16 +43,17 @@ class ParsonsDirective(SphinxDirective):
     
     def run(self):
         logger.info("run-parsons")
-        
-        title_node = nodes.title(text="Toetsvraag")
-        
+                
         # Parse custom subtitle option
         if self.arguments != []:
+            title_node = nodes.title(text="")
             subtitle = nodes.inline()
             subtitle_text = f" - {self.arguments[0]}"
             subtitle_nodes, _ = self.state.inline_text(subtitle_text, self.lineno)
             subtitle.extend(subtitle_nodes)
             title_node += subtitle
+        else:
+            title_node = nodes.title(text=" ")
 
         content_node = nodes.section(ids=["question"])  # question-part
         self.state.nested_parse(self.content, self.content_offset, content_node)
@@ -138,7 +139,7 @@ def setup(app):
     
     app.add_directive("parsons", ParsonsDirective)
     
-    app.add_node(parsonsnode, html=(visit_parsonsnode, depart_parsonsnode))
+    app.add_enumerable_node(parsonsnode, "assessment", None, html=(visit_parsonsnode, depart_parsonsnode))
     app.add_node(ParsonsQuestion, html=(visit_parsonsquestion, depart_parsonsquestion) )
     app.add_node(ParsonsItem, html=(visit_parsonsitem, depart_parsonsitem))
     app.add_node(ParsonsList, html=(visit_parsonslist, depart_parsonslist))

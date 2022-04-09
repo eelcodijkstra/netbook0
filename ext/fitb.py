@@ -76,15 +76,16 @@ class FillInTheBlanksDirective(SphinxDirective):
         
         logger.info("run-fillintheblanks")
         
-        title_node = nodes.title(text="Toetsvraag")
-        
         # Parse custom subtitle option
         if self.arguments != []:
+            title_node = nodes.title(text="")
             subtitle = nodes.inline()
             subtitle_text = f" - {self.arguments[0]}"
             subtitle_nodes, _ = self.state.inline_text(subtitle_text, self.lineno)
             subtitle.extend(subtitle_nodes)
             title_node += subtitle
+        else:
+            title_node = nodes.title(text=" ")
 
         self.blanks = []
         self.fitbnr = self.env.new_serialno("fillintheblanks")
@@ -121,9 +122,6 @@ class FillInTheBlanksDirective(SphinxDirective):
         fitbnode.source, fitbnode.line = self.state_machine.get_source_and_line(self.lineno)
 
         fitbnode.extend([title_node, content_node, feedbacklist])
-#        fitbnode["data-correct"] = self.options["correct"]
-#        fitbnode["mchoice-title"] = self.arguments[0]
-
         return [fitbnode]
 
 def visit_fitbnode (self, node):
@@ -139,19 +137,6 @@ def visit_fitbquestion (self, node):
 
 def depart_fitbquestion (self, node):
     self.body.append('</div>\n')
-
-## def visit_fitbansweritem (self, node):
-##    self.body.append('<li>')
-
-## def depart_fitbansweritem (self, node):
-##    self.body.append('</li>')
-
-##
-## def visit_fitbanswerlist (self, node):
-##    self.body.append('<ul class="fitbanswerlist" hidden>\n')
-
-## def depart_fitbanswerlist (self, node):
-##    self.body.append('</ul>\n')
 
 def visit_fitbfeedbackitem (self, node):
     self.body.append('<li data-value="{}">'.format(node["data-value"]))
@@ -182,10 +167,8 @@ def setup(app):
     app.add_role("blank-range", blankrole)
     app.add_role("blank-regexp", blankrole)
     
-    app.add_node(fillintheblanksnode, html=(visit_fitbnode, depart_fitbnode))
+    app.add_enumerable_node(fillintheblanksnode, "assessment", None, html=(visit_fitbnode, depart_fitbnode))
     app.add_node(FitbQuestion, html=(visit_fitbquestion, depart_fitbquestion) )
-#    app.add_node(FitbAnswerItem, html=(visit_fitbansweritem, depart_fitbansweritem))
-#    app.add_node(FitbAnswerList, html=(visit_fitbanswerlist, depart_fitbanswerlist))
     app.add_node(FitbFeedbackList, html=(visit_fitbfeedbacklist, depart_fitbfeedbacklist))
     app.add_node(FitbFeedbackItem, html=(visit_fitbfeedbackitem, depart_fitbfeedbackitem))
     app.add_node(blanknode, html=(visit_blanknode, depart_blanknode))
