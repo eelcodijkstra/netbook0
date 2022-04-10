@@ -5,17 +5,19 @@ from sphinx.util import logging
 from sphinx.locale import _
 from sphinx.util.docutils import SphinxDirective
 
-import random
+# import random
 
 logger = logging.getLogger(__name__)
 
-def randomize (arr: list):
-    length: int = len(arr)
-    for a in range(length * 5):
-        for i in range(length):
-            x = random.randrange(0, length)
-            y = random.randrange(0, length)
-            arr[x], arr[y] = arr[y], arr[x] 
+from utils import randomize
+
+#def randomize (arr: list):
+#    length: int = len(arr)
+#    for a in range(length * 5):
+#        for i in range(length):
+#            x = random.randrange(0, length)
+#            y = random.randrange(0, length)
+#            arr[x], arr[y] = arr[y], arr[x] 
 
 class parsonsnode(nodes.Admonition, nodes.Element):
     

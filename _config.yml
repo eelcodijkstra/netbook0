@@ -37,10 +37,11 @@ sphinx:
   - sphinx_exercise
   local_extensions:
 #    sphinx_exercise: ./ext/sphinx-exercise
-    mchoice: ./ext
-    dragndrop: ./ext
-    fitb: ./ext
-    parsons: ./ext
+    assessment: ./ext
+#    mchoice: ./ext
+#    dragndrop: ./ext
+#    fitb: ./ext
+#    parsons: ./ext
   config:
     todo_include_todos: true
     numfig_format:
