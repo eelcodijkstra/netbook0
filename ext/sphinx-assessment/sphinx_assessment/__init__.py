@@ -5,10 +5,10 @@ from sphinx.util import logging
 from sphinx.locale import _
 from sphinx.util.docutils import SphinxDirective
 
-import mchoice
-import dragndrop
-import fitb
-import parsons
+from .mchoice import setup as mchoice_setup
+from .dragndrop import setup as dragndrop_setup
+from .fitb import setup as fitb_setup
+from .parsons import setup as parsons_setup
 
 logger = logging.getLogger(__name__)
 
@@ -27,10 +27,10 @@ def setup(app):
 
     app.connect("config-inited", init_numfig)  # event order - 1
 
-    mchoice.setup(app)
-    dragndrop.setup(app)
-    fitb.setup(app)
-    parsons.setup(app)
+    mchoice_setup(app)
+    dragndrop_setup(app)
+    fitb_setup(app)
+    parsons_setup(app)
 
     return {
         "version": "0.1",

@@ -37,7 +37,7 @@ sphinx:
   - sphinx_exercise
   local_extensions:
 #    sphinx_exercise: ./ext/sphinx-exercise
-    assessment: ./ext
+    sphinx_assessment: ./ext/sphinx-assessment
 #    mchoice: ./ext
 #    dragndrop: ./ext
 #    fitb: ./ext

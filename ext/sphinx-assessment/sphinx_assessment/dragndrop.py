@@ -9,7 +9,7 @@ from sphinx.util.docutils import SphinxDirective
 
 logger = logging.getLogger(__name__)
 
-from utils import randomize
+from .utils import randomize
 
 # def randomize (arr):
 #    length = len(arr)
