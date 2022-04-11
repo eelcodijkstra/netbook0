@@ -6,8 +6,9 @@ root: intro
 options:
   numbered: True
 chapters:
-- file: lokaal-netwerk
+- file: lokaal-netwerk-en-internet
   sections:
+  - file: lokaal-netwerk
   - file: thuisrouter
   - file: adressering-1
   - file: vpn
