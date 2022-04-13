@@ -44,18 +44,7 @@ class MChoiceDirective(SphinxDirective):
         "multiple": directives.flag,
     }
 
-    def isContainer(self, node):
-        return isinstance(node, nodes.list_item) or isinstance(node, nodes.paragraph)
-
-    def addPrefix(self, prefix, node):
-        if self.isContainer(node):
-            if self.isContainer(node[0]):
-                self.addPrefix(prefix, node[0])
-            else:
-                node.children = [nodes.strong(text=prefix)] + node.children
-
     def run(self):
-        logger.info("run-mchoice")
         if not ("correct" in self.options):
             raise self.error("multiple choice: 'correct' option missing")
 
@@ -73,14 +62,12 @@ class MChoiceDirective(SphinxDirective):
         content_node = nodes.section(ids=["question"])  # question-part
         self.state.nested_parse(self.content, self.content_offset, content_node)
 
-        logger.info("content-length: {:d}".format(len(content_node)))
+        # logger.info("content-length: {:d}".format(len(content_node)))
 
         if not (
             len(content_node) > 0 and isinstance(content_node[-1], nodes.bullet_list)
         ):
             raise self.error("multiple choice: answer list missing")
-
-        #       self.addPrefix("MC-" + self.arguments[0] + ": ", content_node)
 
         bulletlist = content_node[-1]  # answer list
         content_node.pop()  # remove bullet list
@@ -91,10 +78,8 @@ class MChoiceDirective(SphinxDirective):
         itemnr = 0
         for item in bulletlist:
             if len(item) > 0 and isinstance(item[-1], nodes.bullet_list):
-                logger.info("feedback item found")
                 listitem = item[-1][0]  # first item of sublist
                 item.pop()  # remove sublist from original item
-                # self.addPrefix("{}) ".format(itemnames[itemnr]), listitem)
                 if len(listitem) > 0 and isinstance(listitem[0], nodes.paragraph):
                     listitem = listitem[0]
                 feedbackitem = MCFeedbackItem(
@@ -108,7 +93,6 @@ class MChoiceDirective(SphinxDirective):
             feedbackitem["data-value"] = itemnames[itemnr]
             feedbacklist.append(feedbackitem)
 
-            logger.info("item letter: " + itemnames[itemnr])
             if len(item) > 0 and isinstance(item[0], nodes.paragraph):
                 item = item[0]
 
@@ -123,7 +107,6 @@ class MChoiceDirective(SphinxDirective):
 
         mcnode.extend([title_node, content_node, answerlist, feedbacklist])
         mcnode["data-correct"] = self.options["correct"]
-        #        mcnode["mchoice-title"] = self.arguments[0]
 
         return [mcnode]
 
@@ -134,11 +117,9 @@ def visit_mchoicenode(self, node):
             node["data-correct"]
         )
     )
-    logger.info("visit-mchoicenode")
 
 
 def depart_mchoicenode(self, node):
-    logger.info("depart-mchoicenode")
     self.body.append("</form>\n")
 
 
@@ -198,8 +179,6 @@ def depart_mcfeedbackitem(self, node):
 
 
 def setup(app):
-    logger.info("setup-mchoice")
-
     app.add_js_file("js/mchoice.js")
 
     app.add_directive("mchoice", MChoiceDirective)

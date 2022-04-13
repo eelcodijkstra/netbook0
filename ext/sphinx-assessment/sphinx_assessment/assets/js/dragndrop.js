@@ -52,11 +52,6 @@ function find_dragndrops() {
         item.ondrop = drop;
         item.ondragover = allowDrop;        
     }
-    var targets = document.getElementsByClassName("dndsourcelist");
-    for (const item of targets) {    
-        item.ondrop = drop;
-        item.ondragover = allowDrop;        
-    } 
     var checkbuttons = document.getElementsByClassName("dndcheckbutton");
     for (const button of checkbuttons) {
         button.onclick = checkDnd;
