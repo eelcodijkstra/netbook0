@@ -2,7 +2,6 @@ from docutils import nodes
 from docutils.parsers.rst import directives, Directive
 
 from sphinx.util import logging
-from sphinx.locale import _
 from sphinx.util.docutils import SphinxDirective
 
 from .mchoice import setup as mchoice_setup
