@@ -193,7 +193,7 @@ def setup(app):
     logger.info("setup-fillintheblank")
 
     app.add_js_file("js/fitb.js")
-    app.add_css_file("css/fitb.css")
+ #   app.add_css_file("css/fitb.css")
 
     app.add_directive("fillintheblank", FillInTheBlanksDirective)
     app.add_role("blank", blankrole)
