@@ -33,7 +33,7 @@ def copy_asset_files(app, exc):
         Path(__file__).parent.joinpath("assets", "css", "assessment.css").absolute()
     )
     static_path_js = (
-        Path(__file__).parent.joinpath("assets", "js", "mchoice.js").absolute()
+        Path(__file__).parent.joinpath("assets", "js", "assessment.js").absolute()
     )
     asset_files = [str(static_path_css), str(static_path_js)]
 
@@ -55,6 +55,7 @@ def setup(app):
     parsons_setup(app)
     
     app.add_css_file("assessment.css")
+    app.add_js_file("assessment.js")
 
     return {
         "version": "0.1",

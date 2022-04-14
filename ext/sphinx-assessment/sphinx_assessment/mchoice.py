@@ -179,7 +179,7 @@ def depart_mcfeedbackitem(self, node):
 
 
 def setup(app):
-    app.add_js_file("js/mchoice.js")
+#    app.add_js_file("js/mchoice.js")
 
     app.add_directive("mchoice", MChoiceDirective)
 

@@ -6,6 +6,8 @@ notebooks/_build/
 ext/sphinx-exercise
 ext/__pycache__
 ext/sphinx-assessment/sphinx_assessment/__pycache__
+ext/sphinx-assessment/sphinx_assessment/node_modules/
+ext/sphinx-assessment/sphinx_assessment/package-lock.json
 elm-stuff/*
 .obsidian
 _build/*

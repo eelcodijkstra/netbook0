@@ -29,14 +29,14 @@ function fitbcheck (evt, item) {
 
 
 function find_fillintheblanks() {
-    var fitbs = document.getElementsByClassName("fitb");
-    console.log("fitb's found: " + fitbs.length.toString());
+    const fitbs = document.getElementsByClassName('fitb');
+    console.log('fitb's found: ' + fitbs.length.toString());
     
-    console.log("fitbs is array? " + Array.isArray(fitbs));
+    console.log('fitbs is array? ' + Array.isArray(fitbs));
     
-    for (const item of fitbs) {
+    for (let item of fitbs) {
         console.log("in forEach");
-        var checkbutton = item.querySelector(".fitbcheckbutton");
+        const checkbutton = item.querySelector('.fitbcheckbutton');
         checkbutton.onclick = function (evt) {fitbcheck(evt, item);};
     }
 }
