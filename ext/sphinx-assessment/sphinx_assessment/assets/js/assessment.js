@@ -55,7 +55,54 @@
     }
   }
 
+  /*
+  ** fillintheblank
+  */
+
+  function fitbcheck(evt, item) {
+    console.log('check fitb');
+    const answers = item.getElementsByClassName('fitbanswer');
+    for (const answer of answers) {
+      const type = answer.dataset.type;
+      const answer1 = answer.dataset.answer;
+      const answer2 = answer.dataset.answer2;
+      const input = answer.value;
+      console.log(
+          'Check: ' + type + ' - ' + answer1 + ' - ' + answer2 + ' > ' + input
+      );
+      let ok = false;
+      if (type == 'text') {
+        ok = answer.value == answer.dataset.answer;
+      } else if (type == 'range') {
+        const num = Number(answer.value);
+        const min = Number(answer.dataset.answer);
+        const max = Number(answer.dataset.answer2);
+        ok = (min <= num) && (num <= max);
+      } else if (type == 'regexp') {
+        const regexp = new RegExp(answer.dataset.answer);
+        ok = regexp.test(answer.value);
+      }
+      if (ok) {
+        answer.style.backgroundColor = 'lightGreen';
+      } else {
+        answer.style.backgroundColor = 'salmon';
+      }
+    }
+  }
+
+  function findFillintheblanks() {
+    //    const fitbs = document.getElementsByClassName('fillintheblank');
+    const fitbs = document.querySelectorAll('.fillintheblank');
+    for (const item of fitbs) {
+      const checkbutton = item.querySelector('.fitbcheckbutton');
+      checkbutton.onclick = function(evt) {
+        fitbcheck(evt, item);
+      };
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', function(event) {
+    findFillintheblanks();
     findMchoices();
   });
 })();

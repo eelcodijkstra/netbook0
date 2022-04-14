@@ -85,7 +85,7 @@ class FillInTheBlanksDirective(SphinxDirective):
     def run(self):
         global activeFITB
 
-        logger.info("run-fillintheblanks")
+        logger.info("run-fillintheblank")
 
         # Parse custom subtitle option
         if self.arguments != []:
@@ -99,7 +99,7 @@ class FillInTheBlanksDirective(SphinxDirective):
             title_node = nodes.title(text=" ")
 
         self.blanks = []
-        self.fitbnr = self.env.new_serialno("fillintheblanks")
+        self.fitbnr = self.env.new_serialno("fillintheblank")
         activeFITB = self
         content_node = nodes.section(ids=["question"])  # question-part
         self.state.nested_parse(self.content, self.content_offset, content_node)
@@ -140,7 +140,7 @@ class FillInTheBlanksDirective(SphinxDirective):
 
 
 def visit_fitbnode(self, node):
-    self.body.append('<div class="fitb admonition">')
+    self.body.append('<div class="fillintheblank admonition">')
     logger.info("visit-fillintheblanknode")
 
 
