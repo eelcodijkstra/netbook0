@@ -173,8 +173,6 @@ def depart_dndtargetlist(self, node):
 
 
 def setup(app):
-    app.add_js_file("js/dragndrop.js")
-
     app.add_directive("dragndrop", DragndropDirective)
 
     app.add_enumerable_node(

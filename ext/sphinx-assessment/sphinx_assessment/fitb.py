@@ -10,7 +10,6 @@ logger = logging.getLogger(__name__)
 
 class fillintheblanksnode(nodes.Admonition, nodes.Element):
     def __init__(self, **kwargs):
-        logger.info("new-fitbnode")
         super().__init__(**kwargs)
 
 
@@ -191,9 +190,6 @@ def depart_blanknode(self, node):
 
 def setup(app):
     logger.info("setup-fillintheblank")
-
-    app.add_js_file("js/fitb.js")
- #   app.add_css_file("css/fitb.css")
 
     app.add_directive("fillintheblank", FillInTheBlanksDirective)
     app.add_role("blank", blankrole)

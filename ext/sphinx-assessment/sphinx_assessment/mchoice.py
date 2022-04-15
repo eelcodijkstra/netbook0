@@ -10,7 +10,6 @@ logger = logging.getLogger(__name__)
 
 class mchoicenode(nodes.Admonition, nodes.Element):
     def __init__(self, **kwargs):
-        logger.info("new-mchoicenode")
         super().__init__(**kwargs)
 
 
@@ -61,8 +60,6 @@ class MChoiceDirective(SphinxDirective):
 
         content_node = nodes.section(ids=["question"])  # question-part
         self.state.nested_parse(self.content, self.content_offset, content_node)
-
-        # logger.info("content-length: {:d}".format(len(content_node)))
 
         if not (
             len(content_node) > 0 and isinstance(content_node[-1], nodes.bullet_list)
@@ -179,8 +176,6 @@ def depart_mcfeedbackitem(self, node):
 
 
 def setup(app):
-#    app.add_js_file("js/mchoice.js")
-
     app.add_directive("mchoice", MChoiceDirective)
 
     app.add_enumerable_node(
