@@ -85,7 +85,7 @@
         ok = regexp.test(answer.value);
       }
       if (ok) {
-        answer.style.backgroundColor = 'lightGreen';
+        answer.style.backgroundColor = 'yellowGreen';
       } else {
         answer.style.backgroundColor = 'salmon';
       }
@@ -102,6 +102,7 @@
       };
     }
   }
+
   /*
   ** Dragndrop
   */
