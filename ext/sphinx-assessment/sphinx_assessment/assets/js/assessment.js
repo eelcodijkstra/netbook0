@@ -31,6 +31,8 @@
     console.log('target: ' + event.target.id);
     console.log('form: ' + event.target.form.id);
     const myform = event.target.form;
+    const feedbackline = myform.getElementsByClassName('feedback')[0];  
+    feedbackline.innerHTML = '';
     const feedbacklist = myform.getElementsByTagName('ul')[0];
     feedbacklist.hidden = true;
     const feedbacks = feedbacklist.getElementsByTagName('li');

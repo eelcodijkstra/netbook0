@@ -153,7 +153,7 @@ def depart_mcanswerlist(self, node):
     answerlistclose = """
   <div class="buttonpart">
     <button type="submit" class="checkbutton"> Check </button>
-    <button type="reset" class="resetbutton" hidden> Reset </button>
+    <button type="reset" class="resetbutton"> Reset </button>
   </div>
 """
     self.body.append(answerlistclose)

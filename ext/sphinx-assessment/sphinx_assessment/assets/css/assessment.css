@@ -37,7 +37,7 @@ form.mchoice div.buttonspart {
   margin-top: 5px; 
 }
 
-form.mchoice button.checkbutton {
+form.mchoice :is(button.checkbutton, button.resetbutton) {
   background-color: rgba(var(--pst-color-admonition-hint),0.1);
   border-color: rgba(var(--pst-color-admonition-hint),0.3);  
   border-radius: 8px;
