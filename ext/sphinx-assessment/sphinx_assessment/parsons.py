@@ -12,7 +12,6 @@ logger = logging.getLogger(__name__)
 
 class parsonsnode(nodes.Admonition, nodes.Element):
     def __init__(self, **kwargs):
-        logger.info("new-parsonsnode")
         super().__init__(**kwargs)
 
 
@@ -38,7 +37,6 @@ class ParsonsDirective(SphinxDirective):
     }
 
     def run(self):
-        logger.info("run-parsons")
 
         # Parse custom subtitle option
         if self.arguments != []:
@@ -54,8 +52,6 @@ class ParsonsDirective(SphinxDirective):
         content_node = nodes.section(ids=["question"])  # question-part
         self.state.nested_parse(self.content, self.content_offset, content_node)
 
-        logger.info("content-length: {:d}".format(len(content_node)))
-
         if not (
             len(content_node) > 0 and isinstance(content_node[-1], nodes.literal_block)
         ):
@@ -69,7 +65,6 @@ class ParsonsDirective(SphinxDirective):
         text = codeblock.astext()
 
         parsonsnr = self.env.new_serialno("parsons")
-        logger.info("parsons-{}".format(parsonsnr))
         itemnr = 1
         sourcelines = text.splitlines()
         for line in sourcelines:
@@ -97,11 +92,9 @@ class ParsonsDirective(SphinxDirective):
 
 def visit_parsonsnode(self, node):
     self.body.append('<div class="parsons admonition">')
-    logger.info("visit-parsonsnode")
 
 
 def depart_parsonsnode(self, node):
-    logger.info("depart-parsonsnode")
     self.body.append('<button class="parsons-checkbutton">Check</button>')
     self.body.append("</div>\n")
 
@@ -145,10 +138,6 @@ def depart_parsonslist(self, node):
 
 
 def setup(app):
-    logger.info("setup-parsons")
-
-    app.add_js_file("js/parsons.js")
-
     app.add_directive("parsons", ParsonsDirective)
 
     app.add_enumerable_node(
