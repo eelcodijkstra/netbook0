@@ -47,8 +47,6 @@ def blankrole(
 ):
     global activeFITB
 
-    logger.info("blank: " + name + " raw: " + rawtext + " text: " + text)
-
     bnode = blanknode(rawtext)
     bnode.line = lineno
     bnode.blankanswer = text
@@ -84,8 +82,6 @@ class FillInTheBlanksDirective(SphinxDirective):
     def run(self):
         global activeFITB
 
-        logger.info("run-fillintheblank")
-
         # Parse custom subtitle option
         if self.arguments != []:
             title_node = nodes.title(text="")
@@ -103,9 +99,6 @@ class FillInTheBlanksDirective(SphinxDirective):
         content_node = nodes.section(ids=["question"])  # question-part
         self.state.nested_parse(self.content, self.content_offset, content_node)
 
-        logger.info("content-length: {:d}".format(len(content_node)))
-        logger.info("nr. of blanks: {:d}".format(len(self.blanks)))
-
         if not (
             len(content_node) > 0 and isinstance(content_node[-1], nodes.bullet_list)
         ):
@@ -119,8 +112,6 @@ class FillInTheBlanksDirective(SphinxDirective):
         itemnames = "abcdefghijklmnopqrstuvwxyz"
         itemnr = 0
         for item in bulletlist:
-            logger.info("item letter: " + itemnames[itemnr])
-
             feedbackitem = FitbFeedbackItem(
                 item.rawsource, *item.children, **item.attributes
             )
@@ -140,7 +131,6 @@ class FillInTheBlanksDirective(SphinxDirective):
 
 def visit_fitbnode(self, node):
     self.body.append('<div class="fillintheblank admonition">')
-    logger.info("visit-fillintheblanknode")
 
 
 def depart_fitbnode(self, node):
@@ -189,8 +179,6 @@ def depart_blanknode(self, node):
 
 
 def setup(app):
-    logger.info("setup-fillintheblank")
-
     app.add_directive("fillintheblank", FillInTheBlanksDirective)
     app.add_role("blank", blankrole)
     app.add_role("blank-range", blankrole)

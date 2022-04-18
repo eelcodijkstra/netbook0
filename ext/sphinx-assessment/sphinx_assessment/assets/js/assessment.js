@@ -1,4 +1,7 @@
 (function() {
+  /*
+  ** mchoice
+  */
   function mcHandler(event) {
     console.log('target: ' + event.target.id);
     const myform = event.target;
@@ -31,7 +34,7 @@
     console.log('target: ' + event.target.id);
     console.log('form: ' + event.target.form.id);
     const myform = event.target.form;
-    const feedbackline = myform.getElementsByClassName('feedback')[0];  
+    const feedbackline = myform.getElementsByClassName('feedback')[0];
     feedbackline.innerHTML = '';
     const feedbacklist = myform.getElementsByTagName('ul')[0];
     feedbacklist.hidden = true;
@@ -104,7 +107,7 @@
   }
 
   /*
-  ** Dragndrop
+  ** dragndrop
   */
 
   function allowDrop(ev) {
