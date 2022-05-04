@@ -12,10 +12,14 @@ chapters:
   - file: thuisrouter
   - file: adressering-1
   - file: vpn
+  - file: dns
   - file: internet
   - file: opdrachten
   - file: toetsvragen
-- file: uitwerkingen
+  - file: uitwerkingen  
+- file: web-en-internet
+  sections:
+  - file: web
 - file: rest
 - file: todos
 - file: glossary

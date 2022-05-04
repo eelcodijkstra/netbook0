@@ -26,4 +26,13 @@ Frame
 MAC-adres
   Het wereldwijd-unieke hardware-adres van een netwerkinterface. Zowel Ethernet als WiFi gebruiken dezelfde soort 48-bits MAC-adressen. Dit adres is door de leverancier aan het interfacce toegewezen, en verandert dus niet. (Ook Bluetooth gebruikt dergelijke MAC-adressen.)
 
+Client-server interactie
+  Eén van de soorten interacties in netwerken: de client(computer) stuurt een verzoek (request) naar de server, waarna de server een antwoord (response) terugstuurt. Een voorbeeld hiervan is de interactie in het HTTP-protocol tussen de browser (als client) en de webserver (als server). Andere protocollen die het client-server model gebruiken zijn *FTP* (file transfer) en *SMTP* en *IMAP* (voor e-mail). De client en de server zijn *rollen* in deze interacties.  Eenzelfde computer kan in meerdere interacties betrokken zijn, als client en als server.
+
+Client
+  Een rol in een client-server interactie (zie daar).
+
+Server
+  Een rol in een client-server interactie (zie daar).
+
 ```
