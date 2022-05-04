@@ -185,16 +185,32 @@ def setup(app):
     app.add_role("blank-regexp", blankrole)
 
     app.add_enumerable_node(
-        fillintheblanksnode, "assessment", None, html=(visit_fitbnode, depart_fitbnode)
+        fillintheblanksnode,
+        "assessment",
+        None,
+        html=(visit_fitbnode, depart_fitbnode),
+        singlehtml=(visit_fitbnode, depart_fitbnode),
     )
-    app.add_node(FitbQuestion, html=(visit_fitbquestion, depart_fitbquestion))
     app.add_node(
-        FitbFeedbackList, html=(visit_fitbfeedbacklist, depart_fitbfeedbacklist)
+        FitbQuestion,
+        html=(visit_fitbquestion, depart_fitbquestion),
+        singlehtml=(visit_fitbquestion, depart_fitbquestion),
     )
     app.add_node(
-        FitbFeedbackItem, html=(visit_fitbfeedbackitem, depart_fitbfeedbackitem)
+        FitbFeedbackList,
+        html=(visit_fitbfeedbacklist, depart_fitbfeedbacklist),
+        singlehtml=(visit_fitbfeedbacklist, depart_fitbfeedbacklist),
     )
-    app.add_node(blanknode, html=(visit_blanknode, depart_blanknode))
+    app.add_node(
+        FitbFeedbackItem,
+        html=(visit_fitbfeedbackitem, depart_fitbfeedbackitem),
+        singlehtml=(visit_fitbfeedbackitem, depart_fitbfeedbackitem),
+    )
+    app.add_node(
+        blanknode,
+        html=(visit_blanknode, depart_blanknode),
+        singlehtml=(visit_blanknode, depart_blanknode),
+    )
 
     return {
         "version": "0.1",

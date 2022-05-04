@@ -141,11 +141,27 @@ def setup(app):
     app.add_directive("parsons", ParsonsDirective)
 
     app.add_enumerable_node(
-        parsonsnode, "assessment", None, html=(visit_parsonsnode, depart_parsonsnode)
+        parsonsnode,
+        "assessment",
+        None,
+        html=(visit_parsonsnode, depart_parsonsnode),
+        singlehtml=(visit_parsonsnode, depart_parsonsnode),
     )
-    app.add_node(ParsonsQuestion, html=(visit_parsonsquestion, depart_parsonsquestion))
-    app.add_node(ParsonsItem, html=(visit_parsonsitem, depart_parsonsitem))
-    app.add_node(ParsonsList, html=(visit_parsonslist, depart_parsonslist))
+    app.add_node(
+        ParsonsQuestion,
+        html=(visit_parsonsquestion, depart_parsonsquestion),
+        singlehtml=(visit_parsonsquestion, depart_parsonsquestion),
+    )
+    app.add_node(
+        ParsonsItem,
+        html=(visit_parsonsitem, depart_parsonsitem),
+        singlehtml=(visit_parsonsitem, depart_parsonsitem),
+    )
+    app.add_node(
+        ParsonsList,
+        html=(visit_parsonslist, depart_parsonslist),
+        singlehtml=(visit_parsonslist, depart_parsonslist),
+    )
 
     return {
         "version": "0.1",

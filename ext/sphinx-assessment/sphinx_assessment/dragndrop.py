@@ -180,12 +180,33 @@ def setup(app):
         "assessment",
         None,
         html=(visit_dragndropnode, depart_dragndropnode),
+        singlehtml=(visit_dragndropnode, depart_dragndropnode),
     )
-    app.add_node(DragndropQuestion, html=(visit_dndquestion, depart_dndquestion))
-    app.add_node(DragndropSourceItem, html=(visit_dndsourceitem, depart_dndsourceitem))
-    app.add_node(DragndropSourceList, html=(visit_dndsourcelist, depart_dndsourcelist))
-    app.add_node(DragndropTargetList, html=(visit_dndtargetlist, depart_dndtargetlist))
-    app.add_node(DragndropTargetItem, html=(visit_dndtargetitem, depart_dndtargetitem))
+    app.add_node(
+        DragndropQuestion,
+        html=(visit_dndquestion, depart_dndquestion),
+        singlehtml=(visit_dndquestion, depart_dndquestion),
+    )
+    app.add_node(
+        DragndropSourceItem,
+        html=(visit_dndsourceitem, depart_dndsourceitem),
+        singlehtml=(visit_dndsourceitem, depart_dndsourceitem),
+    )
+    app.add_node(
+        DragndropSourceList,
+        html=(visit_dndsourcelist, depart_dndsourcelist),
+        singlehtml=(visit_dndsourcelist, depart_dndsourcelist),
+    )
+    app.add_node(
+        DragndropTargetList,
+        html=(visit_dndtargetlist, depart_dndtargetlist),
+        singlehtml=(visit_dndtargetlist, depart_dndtargetlist),
+    )
+    app.add_node(
+        DragndropTargetItem,
+        html=(visit_dndtargetitem, depart_dndtargetitem),
+        singlehtml=(visit_dndtargetitem, depart_dndtargetitem),
+    )
 
     return {
         "version": "0.1",

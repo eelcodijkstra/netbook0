@@ -179,13 +179,37 @@ def setup(app):
     app.add_directive("mchoice", MChoiceDirective)
 
     app.add_enumerable_node(
-        mchoicenode, "assessment", None, html=(visit_mchoicenode, depart_mchoicenode)
+        mchoicenode,
+        "assessment",
+        None,
+        html=(visit_mchoicenode, depart_mchoicenode),
+        singlehtml=(visit_mchoicenode, depart_mchoicenode),
     )
-    app.add_node(MChoiceQuestion, html=(visit_mcquestion, depart_mcquestion))
-    app.add_node(MCAnswerItem, html=(visit_mcanswer, depart_mcanswer))
-    app.add_node(MCAnswerList, html=(visit_mcanswerlist, depart_mcanswerlist))
-    app.add_node(MCFeedbackList, html=(visit_mcfeedbacklist, depart_mcfeedbacklist))
-    app.add_node(MCFeedbackItem, html=(visit_mcfeedbackitem, depart_mcfeedbackitem))
+    app.add_node(
+        MChoiceQuestion,
+        html=(visit_mcquestion, depart_mcquestion),
+        singlehtml=(visit_mcquestion, depart_mcquestion),
+    )
+    app.add_node(
+        MCAnswerItem,
+        html=(visit_mcanswer, depart_mcanswer),
+        singlehtml=(visit_mcanswer, depart_mcanswer),
+    )
+    app.add_node(
+        MCAnswerList,
+        html=(visit_mcanswerlist, depart_mcanswerlist),
+        singlehtml=(visit_mcanswerlist, depart_mcanswerlist),
+    )
+    app.add_node(
+        MCFeedbackList,
+        html=(visit_mcfeedbacklist, depart_mcfeedbacklist),
+        singlehtml=(visit_mcfeedbacklist, depart_mcfeedbacklist),
+    )
+    app.add_node(
+        MCFeedbackItem,
+        html=(visit_mcfeedbackitem, depart_mcfeedbackitem),
+        singlehtml=(visit_mcfeedbackitem, depart_mcfeedbackitem),
+    )
 
     return {
         "version": "0.1",
