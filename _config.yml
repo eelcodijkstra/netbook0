@@ -3,6 +3,7 @@
 
 title: Netwerken - het lokale netwerk en het internet
 author: Eelco Dijkstra
+copyright: "2022 SLO, Amersfoort (CC-BY)"
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
