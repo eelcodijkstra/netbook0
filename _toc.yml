@@ -3,23 +3,23 @@
 
 format: jb-book
 root: intro
-options:
-  numbered: True
-chapters:
-- file: lokaal-netwerk-en-internet
-  sections:
-  - file: lokaal-netwerk
-  - file: thuisrouter
-  - file: adressering-1
-  - file: vpn
-  - file: dns
-  - file: internet
-  - file: opdrachten
-  - file: toetsvragen
-  - file: uitwerkingen  
-- file: web-en-internet
-  sections:
-  - file: web
-- file: rest
-- file: todos
-- file: glossary
+parts:
+  - caption: Netwerken
+    numbered: True
+    chapters:
+    - file: internet/lokaal-netwerk-en-internet
+      sections:
+      - file: internet/lokaal-netwerk
+      - file: internet/lokaal-ip  
+      - file: internet/thuisrouter
+      - file: internet/dns
+      - file: internet/internet
+      - file: internet/opdrachten
+      - file: internet/toetsvragen
+      - file: internet/uitwerkingen
+# - file: next chapter
+#   sections:
+
+  - caption: Appendices
+    chapters:
+    - file: glossary

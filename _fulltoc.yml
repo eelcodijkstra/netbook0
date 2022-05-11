@@ -1,0 +1,25 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+options:
+  numbered: True
+chapters:
+- file: internet/lokaal-netwerk-en-internet
+  sections:
+  - file: internet/lokaal-netwerk
+  - file: internet/thuisrouter
+  - file: internet/adressering-1
+  - file: internet/dns
+  - file: internet/internet
+  - file: internet/opdrachten
+  - file: internet/toetsvragen
+  - file: internet/uitwerkingen  
+- file: web/web-en-internet
+  sections:
+  - file: web/web
+- file: rest/rest
+- file: rest/vpn
+- file: todos
+- file: glossary
