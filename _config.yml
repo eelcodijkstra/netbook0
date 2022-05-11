@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Netwerken - het lokale netwerk en het internet
+title: Netwerken
 author: Eelco Dijkstra
 copyright: "2022 SLO, Amersfoort (CC-BY)"
 logo: logo.png
