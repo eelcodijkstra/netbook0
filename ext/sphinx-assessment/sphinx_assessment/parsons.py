@@ -1,8 +1,7 @@
 from docutils import nodes
-from docutils.parsers.rst import directives, Directive  # type: ignore
+from docutils.parsers.rst import directives
 
 from sphinx.util import logging
-from sphinx.locale import _
 from sphinx.util.docutils import SphinxDirective
 
 from .utils import randomize

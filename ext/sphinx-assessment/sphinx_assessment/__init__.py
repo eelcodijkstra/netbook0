@@ -1,11 +1,6 @@
 from pathlib import Path
 
-from docutils import nodes
-from docutils.parsers.rst import directives, Directive
-
-from sphinx.application import Sphinx
 from sphinx.util import logging
-from sphinx.util.docutils import SphinxDirective
 from sphinx.util.fileutil import copy_asset
 
 from .mchoice import setup as mchoice_setup
@@ -40,7 +35,7 @@ def copy_asset_files(app, exc):
     if exc is None:
         for path in asset_files:
             logger.info("copy: " + str(path))
-            logger.info("...to: " + str(Path(app.outdir).joinpath("_static").absolute()))
+            logger.info("..to: " + str(Path(app.outdir).joinpath("_static").absolute()))
             copy_asset(path, str(Path(app.outdir).joinpath("_static").absolute()))
 
 
@@ -53,7 +48,7 @@ def setup(app):
     dragndrop_setup(app)
     fitb_setup(app)
     parsons_setup(app)
-    
+
     app.add_css_file("assessment.css")
     app.add_js_file("assessment.js")
 
