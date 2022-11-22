@@ -2,13 +2,22 @@ Toetsvragen
 ===========
 
 .. dragndrop:: h4-dd-1
-  :match_11: MQTT|||Application layer
-  :match_12: TCP|||Transport layer
-  :match_13: IP|||Internet layer
-  :match_14: WiFI|||Link layer
 
   Plaats het protocol in de juiste laag.
   Let op de namen van de lagen, de volgorde is niet noodzakelijk die in de stack!
+  
+  * Application layer
+  
+    * MQTT
+  * Transport layer
+  
+    * TCP
+  * Internet layer
+  
+    * IP
+  * Link layer
+  
+    * WiFi
 
 
 .. dragndrop:: h4-dd-2
@@ -17,7 +26,7 @@ Toetsvragen
   :match_13: publish(M,T)|||client publiceert een bericht naar een topic
   :match_14: subscribe(T)|||client abonneert zich op een topic
 
-.. mchoice:: h4-mc-3
+.. mchoicem:: h4-mc-3
   :answer_a: ``node/1234/sensors``
   :answer_b: ``node/+/sensors``
   :answer_c: ``node/379/actuators``
@@ -27,7 +36,7 @@ Toetsvragen
 
   Welke topics passen bij het wildcard-patroon ``node/+/+`` ?
 
-.. mchoice:: h4-mc-4
+.. mchoicem:: h4-mc-4
   :answer_a: opslaan van JavaScript (cq. Python enz.) objecten in een database
   :answer_b: communiceren van JavaScript objecten
   :answer_c: afdrukken van JavaScript objecten
@@ -38,11 +47,12 @@ Toetsvragen
   Voor welk soort gebruik is JSON handig?
 
 .. mchoice:: h4_mc-5
-  :answer_a: 1-op-1 communicatie naar een andere client
-  :answer_b: 1-op-N communicatie (broadcast) naar andere clients
   :correct: b
 
   Het publiceren van een MQTT-bericht naar een topic kun je beschouwen als:
+  
+  * 1-op-1 communicatie naar een andere client
+  * 1-op-N communicatie (broadcast) naar andere clients
 
 .. parsonsprob:: h4_pn_6
 
