@@ -1,6 +1,6 @@
-# Netwerken
+# Netwerken-IoT
 
-Dit document bevat een hoofdstuk voor het keuzethema Netwerken: het lokale netwerk en het publieke internet.
+Dit document bevat materiaal voor het keuzethema Netwerken, gebaseerd op het Internet of Things als context.
 
 
 ```{tableofcontents}

@@ -4,9 +4,22 @@
 format: jb-book
 root: intro
 parts:
-  - caption: Netwerken
+  - caption: Vooraf
+    chapters:
+    - file: voorwoord
+    - file: verantwoording
+    
+  - caption: Inhoud
     numbered: True
     chapters:
+    - file: h1/toctree
+    - file: verbindingen/toctree
+    - file: protocollen/toctree
+    - file: mqtt/toctree
+    - file: http/toctree
+    - file: http-iot/toctree
+    - file: lorawan/toctree
+    - file: rfm69/toctree  
     - file: internet/lokaal-netwerk-en-internet
       sections:
       - file: internet/lokaal-netwerk
@@ -17,9 +30,13 @@ parts:
       - file: internet/opdrachten
       - file: internet/toetsvragen
       - file: internet/uitwerkingen
+    - file: http-rest/toctree
+    - file: ttn/toctree
 # - file: next chapter
 #   sections:
 
   - caption: Appendices
     chapters:
+    - file: configureren/configureren
     - file: glossary
+    - file: h0/toctree
