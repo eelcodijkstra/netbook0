@@ -1,0 +1,801 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="nl" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>9.3. De thuisrouter &#8212; Netwerken-IoT</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/assessment.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/patch-next-bug.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/assessment.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'internet/thuisrouter';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="9.4. Domain Name System" href="dns.html" />
+    <link rel="prev" title="9.2. IP in het lokale netwerk" href="lokaal-ip.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="nl"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Netwerken-IoT
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Vooraf</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../voorwoord.html">Voorwoord</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../verantwoording.html">Verantwoording</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Inhoud</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../h1/inleiding.html">1. IoT-toepassingen</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../h1/ontwikkeling.html">1.1. Geschiedenis en ontwikkeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../h1/vb-sproeier.html">1.2. Voorbeeld: Watersproeier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../h1/vb-verlichting.html">1.3. Voorbeeld: slimme verlichting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../h1/functionele-bouwstenen.html">1.4. Functionele bouwstenen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../h1/h1-meervoorbeelden-lijst.html">1.5. Voorbeelden van IoT-toepassingen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../h1/communicatie-analyse.html">1.6. Communicatie: wat heb je nodig?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../h1/voordelen-en-risicos.html">1.7. Voordelen en risico’s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../h1/toetsvragen.html">1.8. Toetsvragen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../h1/opdrachten.html">1.9. Vragen en opdrachten</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../verbindingen/inleiding.html">2. Verbindingen en verbindingsapparaten</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../verbindingen/com-1.html">2.1. Inleiding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../verbindingen/com-2.html">2.2. IoT-radio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../verbindingen/com-2a.html">2.3. Energie en vermogen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../verbindingen/com-3.html">2.4. IoT-gateway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../verbindingen/com-4.html">2.5. LAN-WAN-gateway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../verbindingen/com-5.html">2.6. MQTT-broker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../verbindingen/com-6.html">2.7. Routers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../verbindingen/com-7.html">2.8. Uit de IoT-praktijk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../verbindingen/vragen-en-opdrachten.html">2.9. Vragen en opdrachten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../verbindingen/opdracht-dashboard.html">2.10. IoT-knoop en dashboard</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../protocollen/toctree.html">3. Protocollen</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../protocollen/inleiding.html">3.1. Inleiding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocollen/stapelen.html">3.2. Stapelen van protocollen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocollen/internet-stack.html">3.3. Internet-protocolstack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocollen/protocol-3a.html">3.4. Het end-to-end principe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocollen/protocol-4.html">3.5. IoT protocolstack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocollen/protocol-8.html">3.6. Adressering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocollen/protocol-9.html">3.7. Metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocollen/protocol-10.html">3.8. Payload</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocollen/interactie.html">3.9. Interactie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocollen/pakketcommunicatie.html">3.10. Pakketcommunicatie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocollen/verbindingen.html">3.11. Verbindingsgerichte communicatie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocollen/client-server.html">3.12. Client-server interactie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocollen/publish-subscribe.html">3.13. Publish/subscribe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../protocollen/toetsvragen.html">3.14. Toetsvragen</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../protocollen/nodered/nodered-opdrachten.html">3.15. NodeRed-opdrachten</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../protocollen/nodered/voorbereiding.html">3.15.1. Voorbereiding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../protocollen/nodered/eerste-flow.html">3.15.2. Eerste flow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../protocollen/nodered/tweede-flow.html">3.15.3. Tweede flow: HTTP request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../protocollen/nodered/iot-dashboard.html">3.15.4. Een IoT-dashboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../protocollen/nodered/nodered-faq.html">3.15.5. NodeRed FAQ</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../mqtt/toctree.html">4. MQTT</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../mqtt/mqtt-inleiding.html">4.1. Inleiding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mqtt/mqtts1.html">4.2. Publish-subscribe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mqtt/mqtts2.html">4.3. Gebruik van MQTT in het IoT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mqtt/mqtts3.html">4.4. MQTT: het protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mqtt/mqtts4.html">4.5. JSON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mqtt/mqtts5.html">4.6. Cayenne LPP in JSON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mqtt/mqtts6.html">4.7. MQTT-ketens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mqtt/mqtt-toetsvragen.html">4.8. Toetsvragen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mqtt/mqtt-opdrachten.html">4.9. MQTT-opdrachten</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../mqtt/nodered/mqtt-nodered.html">4.10. NodeRed-opdrachten</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mqtt/nodered/sensor-flow.html">4.10.1. MQTT sensor-flow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mqtt/nodered/actuator-flow.html">4.10.2. MQTT actuator-flow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mqtt/nodered/dashboard-flow.html">4.10.3. Sensor-dashboard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mqtt/nodered/LED-afstandsbediening.html">4.10.4. LED-afstandsbediening</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mqtt/nodered/knipperende-leds.html">4.10.5. Knipperende LEDs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mqtt/nodered/knopen-koppelen.html">4.10.6. Koppelen van knopen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mqtt/nodered/doorverbinden.html">4.10.7. Doorverbinden</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../http/inleiding.html">5. HTTP: webservers</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../http/http-client-server.html">5.1. Client-server interactie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../http/http-adressering.html">5.2. Adressering: URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../http/http-request.html">5.3. Een HTTP request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../http/http-response.html">5.4. Een HTTP-response: payload</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../http/http-protocol-stack.html">5.5. HTTP in de protocolstack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../http/http-toetsvragen.html">5.6. Toetsvragen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../http/opdrachten.html">5.7. HTTP-opdrachten</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../http/nodered/nodered-opdrachten.html">5.8. NodeRed-opdrachten</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../http/nodered/eerste-webserver.html">5.8.1. Eerste webserver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../http/nodered/tweede-pagina.html">5.8.2. Een tweede pagina</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../http/nodered/led-besturing.html">5.8.3. LED-besturing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../http/nodered/webformulieren.html">5.8.4. Webformulieren</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../http-iot/inleiding.html">6. HTTP in het IoT</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../http-iot/iot-besturen.html">6.1. Besturen via de browser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../http-iot/iot-configureren.html">6.2. Configureren via HTTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../http-iot/iot-api-besturen.html">6.3. API’s voor IoT-apparaten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../http-iot/iot-api-diensten.html">6.4. API’s voor webdiensten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../http-iot/toetsvragen.html">6.5. Toetsvragen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../http-iot/opdrachten.html">6.6. HTTP-IoT-opdrachten</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../http-iot/nodered/nodered-opdrachten.html">6.7. NodeRed opdrachten</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../http-iot/nodered/http-request-ieni.html">6.7.1. HTTP website-up test</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../http-iot/nodered/http-api-test-openweathermap.html">6.7.2. HTTP API test</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lorawan/inleiding.html">7. LoRa en LoRaWan</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lorawan/lorawan-toepassingen.html">7.1. LoRaWan toepassingen: voorbeelden</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lorawan/lorawan-toepassingen-karakteristieken.html">7.2. Karakteristieken van LoRaWan-toepassingen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lorawan/lorawan-voordelen.html">7.3. Voordelen van LoRaWan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lorawan/lorawan-beperkingen.html">7.4. Beperkingen van LoRaWan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lorawan/lorawan-keten.html">7.5. De LoRaWan-keten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lorawan/lorawan-devices.html">7.6. LoraWan IoT-devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lorawan/lorawan-gateways.html">7.7. LoRaWan Gateways</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lorawan/lorawan-providers.html">7.8. LoRaWan providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lorawan/lorawan-toetsvragen.html">7.9. Toetsvragen LoRaWan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lorawan/lorawan-opdrachten.html">7.10. Opdrachten LoRaWan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lorawan/nodered-opdrachten.html">7.11. NodeRed-opdrachten</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../rfm69/inleiding.html">8. RFM69-knopen</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../rfm69/rfm69-keten.html">8.1. RFM69 keten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rfm69/rfm69-radio.html">8.2. RFM69-radio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rfm69/rfm69-protocol.html">8.3. RFM69-protocol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rfm69/rfm69-lpp-formaat.html">8.4. RFM69 payload: LPP formaat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rfm69/rfm69-gateway.html">8.5. Gateway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rfm69/rfm69-toetsvragen.html">8.6. Toetsvragen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rfm69/rfm69-opdrachten.html">8.7. Opdrachten</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="lokaal-netwerk-en-internet.html">9. Het lokale netwerk en het publieke internet</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="lokaal-netwerk.html">9.1. Het lokale netwerk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lokaal-ip.html">9.2. IP in het lokale netwerk</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">9.3. De thuisrouter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dns.html">9.4. Domain Name System</a></li>
+<li class="toctree-l2"><a class="reference internal" href="internet.html">9.5. Het publieke internet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="opdrachten.html">9.6. Opdrachten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toetsvragen.html">9.7. Toetsvragen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uitwerkingen.html">9.8. Uitwerkingen van de opdrachten</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ttn/inleiding.html">10. TheThingsNetwork</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ttn/ttn-application.html">10.1. TTN - applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ttn/ttn-devices.html">10.2. TTN - devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ttn/ttn-metadata.html">10.3. TTN-Metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ttn/ttn-payload.html">10.4. TTN - Payload</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ttn/lorawan-server.html">10.5. LoRaWan network server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ttn/lora-sf.html">10.6. LoRa - Spreading Factor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ttn/opdrachten.html">10.7. Opdrachten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ttn/h6s2-toetsvragen.html">10.8. Toetsvragen LoRaWan</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../configureren/configureren.html">Configureren</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Woordenlijst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../h0/voor-de-docent.html">Voor de docent</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/eelcodijkstra/netbook0" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Bronopslagplaats"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/eelcodijkstra/netbook0/issues/new?title=Issue%20on%20page%20%2Finternet/thuisrouter.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open een probleem"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download deze pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/internet/thuisrouter.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download het bronbestand"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Afdrukken naar pdf"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Volledig scherm"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Zoeken" aria-label="Zoeken" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>De thuisrouter</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Inhoud </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aansluitingen">9.3.1. Aansluitingen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instellingen-webserver">9.3.2. Instellingen: webserver</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instellingen-dhcp">9.3.3. Instellingen: DHCP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instelling-firewall">9.3.4. Instelling: Firewall</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instelling-nat">9.3.5. Instelling: NAT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instelling-gast-netwerk">9.3.6. Instelling: Gast-netwerk</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="de-thuisrouter">
+<h1><span class="section-number">9.3. </span>De thuisrouter<a class="headerlink" href="#de-thuisrouter" title="Permalink naar deze titel">#</a></h1>
+<div class="admonition-concepten admonition">
+<p class="admonition-title">Concepten</p>
+<p>thuisrouter (“residential gateway”), NAT-router, VPN, firewall, LAN, WAN, modem, switch</p>
+</div>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../_images/routers-photo-gallery.png"><img alt="../_images/routers-photo-gallery.png" src="../_images/routers-photo-gallery.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9.11 </span><span class="caption-text">Enkele thuisrouters</span><a class="headerlink" href="#id1" title="Permallink naar deze afbeelding">#</a></p>
+</figcaption>
+</figure>
+<p>In dit gedeelte behandelen we de <em>thuisrouter</em> of ook wel <em>residential gateway</em>: de functie(s) die deze vervult, de fysieke aansluitingen, en de instellingen daarvan.
+Deze kennis moet je in staat stellen om de handleidingen van je thuisrouter (beter) te begrijpen, en het hoe en waarom van de aansluitingen en instellingen.</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../_images/thuisrouter-onderdelen.png"><img alt="../_images/thuisrouter-onderdelen.png" src="../_images/thuisrouter-onderdelen.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9.12 </span><span class="caption-text">Thuisrouter-onderdelen</span><a class="headerlink" href="#id2" title="Permallink naar deze afbeelding">#</a></p>
+</figcaption>
+</figure>
+<p>De thuisrouter verbindt het lokale netwerk met het internet.
+Deze routering wordt vaak gecombineerd met een aantal andere functies. In de figuur van rechts naar links:</p>
+<ul class="simple">
+<li><p>(kabel/glasvezel)modem</p></li>
+<li><p>firewall</p></li>
+<li><p>(NAT)router</p></li>
+<li><p>WiFi basisstation</p></li>
+<li><p>Ethernet switch</p></li>
+</ul>
+<p>Daarnaast bevat de thuisrouter soms ook functies voor telefonie en voor een netwerkschijf (NAS).
+Bovendien heeft de thuisrouter een <em>webserver</em> waarmee je de instellingen kunt aanpassen.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Voor losse apparaten ligt een Ethernetverbinding voor de hand. Wanneer deze apparaten gecombineerd worden in een thuisrouter, kan deze intern andere verbindingen gebruiken.</p>
+</aside>
+<p>We beschrijven hieronder deze onderdelen als losse apparaten verbonden via Ethernet.</p>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../_images/glasvezel-modem.png"><img alt="../_images/glasvezel-modem.png" src="../_images/glasvezel-modem.png" style="width: 350px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9.13 </span><span class="caption-text">Glasvezel-modem</span><a class="headerlink" href="#id3" title="Permallink naar deze afbeelding">#</a></p>
+</figcaption>
+</figure>
+<p>Het <em>modem</em> past het datasignaal aan aan het betreffende medium, bijvoorbeeld de (kabeltv-)coaxkabel of de glasvezelkabel. Het modem <em>moduleert</em> het signaal voor het betreffende medium, en <em>demoduleert</em> het signaal van dat medium.</p>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="../_images/firewall.png"><img alt="../_images/firewall.png" src="../_images/firewall.png" style="width: 350px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9.14 </span><span class="caption-text">Firewall - op IP, TCP/UDP, en HTTP-niveau</span><a class="headerlink" href="#id4" title="Permallink naar deze afbeelding">#</a></p>
+</figcaption>
+</figure>
+<p>De <em>firewall</em> zorgt ervoor dat bepaalde communicaties van buiten geweerd worden van het lokale netwerk, en omgekeerd. Dit is een belangrijk onderdeel van de beveiliging van het lokale netwerk.
+(De firewall is hier getekend als apart onderdeel. In de praktijk is deze geïntegreerd met de eigenlijke router.)</p>
+<figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="../_images/nat-router.png"><img alt="../_images/nat-router.png" src="../_images/nat-router.png" style="width: 350px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9.15 </span><span class="caption-text">NAT-router</span><a class="headerlink" href="#id5" title="Permallink naar deze afbeelding">#</a></p>
+</figcaption>
+</figure>
+<p>De <em>router</em> (of gateway) zorgt ervoor dat IP-pakketten van buiten het netwerk naar het juiste apparaat in het netwerk gestuurd worden, en dat lokale pakketen bestemd voor een apparaat in het publieke internet naar de volgende router gestuurd worden. Lokale pakketten met een lokale bestemming blijven lokaal. Deze router is meestal een <em>NAT-router</em>, waarmee alle lokale apparaten hetzelfde publieke IP-adres delen.
+In een volgend gedeelte leggen we de details van NAT-routering uit.
+Merk op dat deze op NAT-routering op de (transport)laag van het TCP/UDP-protocol plaatsvindt, en niet op de (netwerk)laag van het IP-protocol.</p>
+<figure class="align-default" id="id6">
+<a class="reference internal image-reference" href="../_images/ethernet-switch.png"><img alt="../_images/ethernet-switch.png" src="../_images/ethernet-switch.png" style="width: 350px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9.16 </span><span class="caption-text">Switch</span><a class="headerlink" href="#id6" title="Permallink naar deze afbeelding">#</a></p>
+</figcaption>
+</figure>
+<p>De <em>Ethernet switch</em> zorgt ervoor dat je meerdere Ethernetkabels op de thuisrouter kunt aansluiten. Bovendien worden Ethernet-pakketten alleen naar die aansluiting gestuurd waarmee het bestemmings-apparaat verbonden is.</p>
+<figure class="align-default" id="id7">
+<a class="reference internal image-reference" href="../_images/wifi-basisstation.png"><img alt="../_images/wifi-basisstation.png" src="../_images/wifi-basisstation.png" style="width: 350px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9.17 </span><span class="caption-text">WiFi basisstation</span><a class="headerlink" href="#id7" title="Permallink naar deze afbeelding">#</a></p>
+</figcaption>
+</figure>
+<p>Het <em>WiFi basisstation</em> zorgt voor de draadloze communicatie in het lokale netwerk, naast de bedrade communicatie via Ethernet.</p>
+<section id="aansluitingen">
+<h2><span class="section-number">9.3.1. </span>Aansluitingen<a class="headerlink" href="#aansluitingen" title="Permalink naar deze titel">#</a></h2>
+<figure class="align-default" id="id8">
+<a class="reference internal image-reference" href="../_images/routers-back-gallery.png"><img alt="../_images/routers-back-gallery.png" src="../_images/routers-back-gallery.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9.18 </span><span class="caption-text">Aansluitingen van enkele thuisrouters</span><a class="headerlink" href="#id8" title="Permallink naar deze afbeelding">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Externe verbinding.</strong> De thuisrouter heeft een aansluiting voor het “Wide Area Network” (WAN) van de internet-provider. Als de router een ingebouwd (coax)kabelmodem of glasvezelmodem heeft, dan heb je voor dat medium een speciale aansluiting. Een router zonder modem heeft een Ethernet-aansluiting met label “WAN”, voor de verbinding met het modem van de internet-provider.</p>
+<p><strong>Lokale verbindingen.</strong> Voor het lokale netwerk (LAN, local area network) heeft de router vaak meerdere Ethernet-aansluitingen.</p>
+<p>Daarnaast zijn er, afhankelijk van het type thuisrouter, nog aansluitingen mogelijk voor telefonie - voor het aansluiten van een “vaste lijn” telefoon; en voor USB, bijvoorbeeld voor het aansluiten van een USB harde schijf of USB-stick die je dan als netwerkschijf (NAS) kunt gebruiken.</p>
+<p>Een thuisrouter heeft gewoonlijk een ingebouwd WiFi basisstation, voor het draadloos verbinden van apparaten in het thuisnetwerk. Sommige thuisrouters hebben ook een DECT basisstation, voor het draadloos verbinden van telefoons en DECT IoT-apparaten.</p>
+</section>
+<section id="instellingen-webserver">
+<h2><span class="section-number">9.3.2. </span>Instellingen: webserver<a class="headerlink" href="#instellingen-webserver" title="Permalink naar deze titel">#</a></h2>
+<p>De instellingen van de thuisrouter kun je aanpassen via de website van deze router.
+Deze is beschermd met een wachtwoord: het is belangrijk om daarvoor een veilig wachtwoord te kiezen, en niet met een default-instelling zoals “admin - admin” te werken.</p>
+</section>
+<section id="instellingen-dhcp">
+<h2><span class="section-number">9.3.3. </span>Instellingen: DHCP<a class="headerlink" href="#instellingen-dhcp" title="Permalink naar deze titel">#</a></h2>
+<figure class="align-default" id="id9">
+<a class="reference internal image-reference" href="../_images/osx-tcpip-instellingen.png"><img alt="../_images/osx-tcpip-instellingen.png" src="../_images/osx-tcpip-instellingen.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9.19 </span><span class="caption-text">IP-netwerkinstellingen van een computer (OS X)</span><a class="headerlink" href="#id9" title="Permallink naar deze afbeelding">#</a></p>
+</figcaption>
+</figure>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Wikipedia: <a class="reference external" href="https://nl.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol">DHCP</a></p>
+</aside>
+<p>Hoe krijgt een apparaat in het thuisnetwerk een IP-adres toegewezen? Dit gebeurt meestal via het DHCP-protocol. Een apparaat meldt zich via DHCP aan bij het netwerk, en krijgt van de router een IP-adres toegewezen. Deze toewijzing is meestal tijdelijk (“dynamisch IP adres”): als het apparaat zich later weer aanmeldt, krijgt het soms een ander IP-adres.</p>
+<p>DHCP geeft ook het adres van de gateway (thuisrouter) in het lokale netwerk; en het <em>subnetmasker</em> dat aangeeft welke bits het netwerkdeel vormen van het IP-adres.</p>
+<p><strong>Router-instellingen.</strong> In de router kun je instellen welke IP-adressen automatisch uitgedeeld kunnen worden door DHCP.</p>
+<figure class="align-default" id="id10">
+<a class="reference internal image-reference" href="../_images/fritzbox-dhcp-bereik-instellingen.png"><img alt="../_images/fritzbox-dhcp-bereik-instellingen.png" src="../_images/fritzbox-dhcp-bereik-instellingen.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9.20 </span><span class="caption-text">DHCP-instellingen in een router</span><a class="headerlink" href="#id10" title="Permallink naar deze afbeelding">#</a></p>
+</figcaption>
+</figure>
+<p>Je kunt in de router ook opgeven welke apparaten een vast (statisch) IP-adres moeten krijgen. Je geeft dan het MAC-adres van het apparaat op en het IP-adres. Je moet er in dat geval wel voor zorgen dat je eenzelfde IP-adres niet aan meer dan één apparaat toewijst.</p>
+<figure class="align-default" id="id11">
+<a class="reference internal image-reference" href="../_images/fritzbox-dhcp-vast-ip-adres.png"><img alt="../_images/fritzbox-dhcp-vast-ip-adres.png" src="../_images/fritzbox-dhcp-vast-ip-adres.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 9.21 </span><span class="caption-text">Router-instelling voor een vast IP-adres van een apparaat</span><a class="headerlink" href="#id11" title="Permallink naar deze afbeelding">#</a></p>
+</figcaption>
+</figure>
+<p><em>Opmerking.</em> Het DHCP-protocol wordt niet alleen in thuisnetwerken gebruikt: ook een ISP kan bijvoorbeeld gebruik maken van DHCP voor het toewijzen van het publieke IP-adres aan je thuisrouter. In dat geval heb je geen “statisch IP adres”.</p>
+</section>
+<section id="instelling-firewall">
+<h2><span class="section-number">9.3.4. </span>Instelling: Firewall<a class="headerlink" href="#instelling-firewall" title="Permalink naar deze titel">#</a></h2>
+<p>De thuisrouter bevat ook een firewall, die zowel verkeer van buiten naar binnen als omgekeerd kan blokkeren.</p>
+<p>Het blokkeren van uitgaand verkeer is vaak bedoeld voor <em>parental control</em>, om bijvoorbeeld bepaalde diensten of websites te blokkeren voor de apparaten die door kinderen gebruikt worden.</p>
+<p><strong>Firewall per computer.</strong> Je eigen computer heeft ook een firewall, waarmee je de toegang tot je eigen computer kunt beperken, en waarmee je bijvoorbeeld programma’s op je computer toegang tot het internet kunt weigeren. Omdat het lokale netwerk waarin je computer verbonden is, niet altijd veilig is - denk aan een open WiFi netwerk in de trein, op school, of in een café, is het belangrijk om de toegang tot je eigen computer te beperken met een firewall. Soms is http-toegang zinvol, bijvoorbeeld als je een webserver op je computer draait; en soms, SSH, als je vanuit een andere computer wilt kunnen inloggen. Deze protocollen zijn behoorlijk goed te beveiligen. Maar je kunt er ook voor kiezen om je computer helemaal onzichtbaar te maken in het lokale netwerk, voor andere computers, met de “stealth” mode. In dat geval reageert je computer bijvoorbeeld ook niet op “ping” verzoeken.</p>
+<p>NB: ook als je een VPN gebruikt is je computer nog steeds verbonden in een lokaal netwerk, met de andere poorten… Dat beveiligt je niet tegen het lokale netwerk. Alleen het verkeer via de VPN-tunnel is afgeschermd.</p>
+</section>
+<section id="instelling-nat">
+<h2><span class="section-number">9.3.5. </span>Instelling: NAT<a class="headerlink" href="#instelling-nat" title="Permalink naar deze titel">#</a></h2>
+<p>(Zie het gedeelte over NAT.)</p>
+</section>
+<section id="instelling-gast-netwerk">
+<h2><span class="section-number">9.3.6. </span>Instelling: Gast-netwerk<a class="headerlink" href="#instelling-gast-netwerk" title="Permalink naar deze titel">#</a></h2>
+<p>Een router heeft soms meerdere lokale netwerken, bijvoorbeeld een WiFi gastnetwerk. Daarmee kun je anderen thuis toegang geven tot het internet zonder dat je ze toegang heeft te geven tot je privé-netwerk.</p>
+<p>In het gastnetwerk heeft de router een eigen IP-adres dat verschilt van het IP-adres in het normale lokale netwerk.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./internet"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="lokaal-ip.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">vorige</p>
+        <p class="prev-next-title"><span class="section-number">9.2. </span>IP in het lokale netwerk</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dns.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">volgende</p>
+        <p class="prev-next-title"><span class="section-number">9.4. </span>Domain Name System</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Inhoud
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aansluitingen">9.3.1. Aansluitingen</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instellingen-webserver">9.3.2. Instellingen: webserver</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instellingen-dhcp">9.3.3. Instellingen: DHCP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instelling-firewall">9.3.4. Instelling: Firewall</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instelling-nat">9.3.5. Instelling: NAT</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instelling-gast-netwerk">9.3.6. Instelling: Gast-netwerk</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Door Netwerken-team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022 SLO, Amersfoort (CC-BY).
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
