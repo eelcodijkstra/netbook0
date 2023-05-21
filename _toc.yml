@@ -12,14 +12,99 @@ parts:
   - caption: Inhoud
     numbered: True
     chapters:
-    - file: h1/toctree
-    - file: verbindingen/toctree
+    - file: h1/inleiding
+      sections:
+      - file: h1/ontwikkeling.rst
+      - file: h1/vb-sproeier.rst
+      - file: h1/vb-verlichting.rst
+      - file: h1/functionele-bouwstenen.rst
+      - file: h1/h1-meervoorbeelden-lijst.rst
+      - file: h1/communicatie-analyse.rst
+      - file: h1/voordelen-en-risicos.rst
+      - file: h1/toetsvragen
+      - file: h1/opdrachten
+    - file: verbindingen/inleiding
+      sections:
+      - file: verbindingen/com-1.rst
+      - file: verbindingen/com-2.rst
+      - file: verbindingen/com-2a.rst
+      - file: verbindingen/com-3.rst
+      - file: verbindingen/com-4.rst
+      - file: verbindingen/com-5.rst
+      - file: verbindingen/com-6.rst
+      - file: verbindingen/com-7.rst
+      - file: verbindingen/vragen-en-opdrachten.rst
+      - file: verbindingen/opdracht-dashboard.rst    
     - file: protocollen/toctree
-    - file: mqtt/toctree
-    - file: http/toctree
-    - file: http-iot/toctree
-    - file: lorawan/toctree
-    - file: rfm69/toctree  
+      sections:
+      - file: protocollen/inleiding.rst
+      - file: protocollen/stapelen.rst
+      - file: protocollen/internet-stack.rst
+      - file: protocollen/protocol-3a.rst
+      - file: protocollen/protocol-4.rst
+      - file: protocollen/protocol-8.rst
+      - file: protocollen/protocol-9.rst
+      - file: protocollen/protocol-10.rst
+      - file: protocollen/interactie.rst
+      - file: protocollen/pakketcommunicatie.rst
+      - file: protocollen/verbindingen.rst
+      - file: protocollen/client-server.rst
+      - file: protocollen/publish-subscribe.rst
+      - file: protocollen/toetsvragen.md
+      - file: protocollen/nodered/nodered-opdrachten.rst    
+    - file: mqtt/inleiding
+      sections:
+      - file: mqtt/mqtt-inleiding.rst
+      - file: mqtt/mqtts1.rst
+      - file: mqtt/mqtts2.rst
+      - file: mqtt/mqtts3.rst
+      - file: mqtt/mqtts4.rst
+      - file: mqtt/mqtts5.rst
+      - file: mqtt/mqtts6.rst
+      - file: mqtt/mqtt-toetsvragen.rst
+      - file: mqtt/mqtt-opdrachten.rst
+      - file: mqtt/nodered/mqtt-nodered.rst    
+    - file: http/inleiding
+      sections:
+      - file: http/http-client-server.rst
+      - file: http/http-adressering.rst
+      - file: http/http-request.rst
+      - file: http/http-response.rst
+      - file: http/http-protocol-stack.rst
+      - file: http/http-toetsvragen.rst
+      - file: http/opdrachten.rst
+      - file: http/nodered/nodered-opdrachten.rst    
+    - file: http-iot/inleiding
+      sections:
+      - file: http-iot/iot-besturen.rst
+      - file: http-iot/iot-configureren.rst
+      - file: http-iot/iot-api-besturen.rst
+      - file: http-iot/iot-api-diensten.rst
+      - file: http-iot/toetsvragen.rst
+      - file: http-iot/opdrachten.rst
+      - file: http-iot/nodered/nodered-opdrachten.rst      
+    - file: lorawan/inleiding
+      sections:
+      - file: lorawan/lorawan-toepassingen.rst
+      - file: lorawan/lorawan-toepassingen-karakteristieken.rst
+      - file: lorawan/lorawan-voordelen.rst
+      - file: lorawan/lorawan-beperkingen.rst
+      - file: lorawan/lorawan-keten.rst
+      - file: lorawan/lorawan-devices.rst
+      - file: lorawan/lorawan-gateways.rst
+      - file: lorawan/lorawan-providers.rst
+      - file: lorawan/lorawan-toetsvragen.rst
+      - file: lorawan/lorawan-opdrachten.rst
+      - file: lorawan/nodered-opdrachten.rst    
+    - file: rfm69/inleiding
+      sections:
+      - file: rfm69/rfm69-keten.rst
+      - file: rfm69/rfm69-radio.rst
+      - file: rfm69/rfm69-protocol.rst
+      - file: rfm69/rfm69-lpp-formaat.rst 
+      - file: rfm69/rfm69-gateway.rst
+      - file: rfm69/rfm69-toetsvragen.rst
+      - file: rfm69/rfm69-opdrachten.rst
     - file: internet/lokaal-netwerk-en-internet
       sections:
       - file: internet/lokaal-netwerk
@@ -30,8 +115,18 @@ parts:
       - file: internet/opdrachten
       - file: internet/toetsvragen
       - file: internet/uitwerkingen
-    - file: http-rest/toctree
-    - file: ttn/toctree
+#    - file: http-rest/toctree
+    - file: ttn/inleiding
+      sections:
+#      - file: ttn/ttn-inleiding.rst
+      - file: ttn/ttn-application.rst
+      - file: ttn/ttn-devices.rst
+      - file: ttn/ttn-metadata.rst
+      - file: ttn/ttn-payload.rst
+      - file: ttn/lorawan-server.rst
+      - file: ttn/lora-sf.rst
+      - file: ttn/opdrachten.rst
+      - file: ttn/h6s2-toetsvragen.rst    
 # - file: next chapter
 #   sections:
 
@@ -39,4 +134,5 @@ parts:
     chapters:
     - file: configureren/configureren
     - file: glossary
-    - file: h0/toctree
+    - file: h0/voor-de-docent
+

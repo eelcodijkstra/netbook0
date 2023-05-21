@@ -1,7 +1,9 @@
-Bestudeeer een bestaande toepassing
-===================================
+# Vragen en opdrachten
 
-.. exercise:: Bestudeer een bestaande toepassing
+## Bestudeeer een bestaande toepassing
+
+
+:::{exercise} Bestudeer een bestaande toepassing
 
   Bestudeer in een kleine groep een IoT-toepassing uit de voorgaande lijst of een zelf gevonden toepassing.
   Beantwoord daarvoor de onderstaande vragen.
@@ -43,3 +45,22 @@ Bestudeeer een bestaande toepassing
 * Welke diensten "in the cloud" zou je kunnen gebruiken voor een slimme oplossing?
 * Wat zijn de belangrijkste voordelen van de slimme oplossing, en voor wie?
 * Wat zijn de belangrijkste nadelen van de slimme oplossing, en voor wie?
+
+:::
+
+## Bedenk een eigen IoT toepassing
+
+:::{exercise} Bedenk en beschrijf een eigen IoT-toepassing
+
+  Bedenk en beschrijf een eigen IoT-toepassing.
+
+  * wat is de functie van de toepassing?
+  * welke onderdelen denk je voor deze toepassing nodig te hebben?
+  * hoe zien de IoT-knopen eruit? Welke sensoren, actuatoren; batterij/netvoeding;
+    draadloze/bedrade communicatie?
+
+  Maak hiervan een presentatie of een kort document.
+  Beantwoord daarin ook de vragen zoals geformuleerd in de vorige opdracht voor bestaande oplossingen.
+
+
+:::

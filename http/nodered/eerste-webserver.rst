@@ -29,7 +29,7 @@ Een HTTP-request van een browser bevat onder andere de volgende onderdelen:
 
 .. rubric:: Opdracht A
 
-.. figure:: nodered-hello.png
+.. figure:: nodered-http-hello.png
    :width: 600 px
    :align: center
 

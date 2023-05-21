@@ -21,30 +21,45 @@ Toetsvragen
 
 
 .. dragndrop:: h4-dd-2
-  :match_11: broker|||ontvangt MQTT berichten en stuurt deze door naar geabonneerde clients
-  :match_12: topic|||identificeert een stroom berichten
-  :match_13: publish(M,T)|||client publiceert een bericht naar een topic
-  :match_14: subscribe(T)|||client abonneert zich op een topic
 
-.. mchoicem:: h4-mc-3
-  :answer_a: ``node/1234/sensors``
-  :answer_b: ``node/+/sensors``
-  :answer_c: ``node/379/actuators``
-  :answer_d: ``node/sensors``
-  :answer_e: ``node/1234``
+  Plaats de term bij de bijbehorende omschrijving.
+  
+  * ontvangt MQTT berichten en stuurt deze door naar geabonneerde clients
+  
+    * broker 
+  * identificeert een stroom berichten
+  
+    * topic 
+  * client publiceert een bericht naar een topic
+
+    * publish(M,T)
+  * client abonneert zich op een topic
+  
+    * subscribe(T)
+
+.. mchoice:: h4-mc-3
   :correct: a,c
 
   Welke topics passen bij het wildcard-patroon ``node/+/+`` ?
+  
+  * ``node/1234/sensors``
+  * ``node/+/sensors``
+  * ``node/379/actuators``
+  * ``node/sensors``
+  * ``node/1234``
+  
+    * (feedback)
 
-.. mchoicem:: h4-mc-4
-  :answer_a: opslaan van JavaScript (cq. Python enz.) objecten in een database
-  :answer_b: communiceren van JavaScript objecten
-  :answer_c: afdrukken van JavaScript objecten
-  :answer_d: opslaan van JavaScript objecten in een JavaScript array
-  :answer_e: bewerken van JavaScrip objecten
+.. mchoice:: h4-mc-4
   :correct: a,b,c
 
   Voor welk soort gebruik is JSON handig?
+  
+  * opslaan van JavaScript (cq. Python enz.) objecten in een database
+  * communiceren van JavaScript objecten
+  * afdrukken van JavaScript objecten
+  * opslaan van JavaScript objecten in een JavaScript array
+  * bewerken van JavaScrip objecten 
 
 .. mchoice:: h4_mc-5
   :correct: b
@@ -54,20 +69,22 @@ Toetsvragen
   * 1-op-1 communicatie naar een andere client
   * 1-op-N communicatie (broadcast) naar andere clients
 
-.. parsonsprob:: h4_pn_6
+.. parsons:: h4_pn_6
 
-   Zet de onderdelen van de MQTT-interactie in de juiste volgorde.
-   -----
-   client B: subscribe("chat")
-   client A: publish("hallo?", "chat")
-   broker: push("hallo?", "chat") naar B
-   client B: ontvang("hallo?", "chat")
+  Zet de onderdelen van de MQTT-interactie in de juiste volgorde::
 
-.. parsonsprob:: h4_pn_7
+    client B: subscribe("chat")
+    client A: publish("hallo?", "chat")
+    broker: push("hallo?", "chat") naar B
+    client B: ontvang("hallo?", "chat")
 
-   Stapel de protocollen op de juiste manier, met het toepassingsprotocol bovenaan.
-   -----
-   MQTT
-   TCP
-   IP
-   WiFi
+.. parsons:: h4_pn_7
+
+  Stapel de protocollen op de juiste manier, met het toepassingsprotocol bovenaan::
+   
+    MQTT
+    TCP
+    IP
+    WiFi
+
+..

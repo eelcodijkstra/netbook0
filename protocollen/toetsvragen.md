@@ -76,14 +76,15 @@ Plaats het protocol bij het bijbehorende adres.
   * WiFi
 :::
 
-:::{mchoicem} h2-mc-6
-  :answer_a: WiFi MAC-adres
-  :answer_b: URL
-  :answer_c: IP-adres
-  :answer_d: postadres
+:::{mchoice} h2-mc-6
   :correct: b,c,d
 
   Welke van de onderstaande adressen kun je gebruiken om te routeren?
+  
+  * WiFi MAC-adres
+  * URL
+  * IP-adres
+  * postadres  
 :::
 
 :::{mchoice} h2-mc-7

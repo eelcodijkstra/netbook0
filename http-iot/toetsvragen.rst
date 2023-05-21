@@ -5,20 +5,26 @@ Toetsvragen
 
 ..
 
-.. mchoicem:: http-iot-01
-  :answer_a: De IoT-knoop gebruikt een ander WiFi-protocol.
-  :answer_b: De IoT-knoop is naast het eigen WiFi-netwerk niet met een ander netwerk verbonden.
-  :answer_c: De IoT-knoop heeft een vast IP-adres in het eigen WiFi-netwerk.
-  :answer_d: De IoT-knoop kan niet dezelfde IP-adressen gebruiken als het normale WiFi-netwerk.
+.. mchoice:: http-iot-01
   :correct: b
-  :multiple_answers:
-  :feedback_a: Ze kunnen hetzelfde protocol gebruiken.
-  :feedback_b: Inderdaad: het netwerk is daardoor los van het internet.
-  :feedback_c: Ook de gateway in het WiFi-netwerk heeft een vast IP-adres.
-  :feedback_d: Ze gebruiken beide "lokale IP-adressen".
+  :multiple:
 
   Wat zijn de *verschillen* tussen een normale WiFi-access point (base station)/gateway en
   de IoT-knoop als access point?
+ 
+  * De IoT-knoop gebruikt een ander WiFi-protocol.
+
+    * Ze kunnen hetzelfde protocol gebruiken.
+  * De IoT-knoop is naast het eigen WiFi-netwerk niet met een ander netwerk verbonden.
+  
+    * Inderdaad: het netwerk is daardoor los van het internet.
+  * De IoT-knoop heeft een vast IP-adres in het eigen WiFi-netwerk.
+  
+    * Ook de gateway in het WiFi-netwerk heeft een vast IP-adres.
+  * De IoT-knoop kan niet dezelfde IP-adressen gebruiken als het normale WiFi-netwerk.
+  
+    * Ze gebruiken beide "lokale IP-adressen".
+  
 
 ..
 

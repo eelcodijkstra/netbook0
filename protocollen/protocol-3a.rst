@@ -60,15 +60,18 @@ inclusief datacompressie, versleuteling e.d..
   * de internetlaag alleen in de eindapparaten aanwezig is
   * de toepassingenlaag in alle apparaten tussen de eindapparaten aanwezig is
 
-.. mchoicem:: prot-e2e-mc-2
-   :answer_a: een eigen internet-toepassing kunt maken
-   :answer_b: een eigen protocol voor een toepassing kunt gebruiken
-   :answer_c: zelf domeinnamen kunt uitdelen
-   :answer_d: zelf IP-adressen kunt uitdelen
-   :answer_e: berichten versleuteld over het internet kunt sturen
+.. mchoice:: prot-e2e-mc-2
    :correct: a,b,e
 
    Het end-to-end principe van het internet heeft als gevolg(en) dat je zonder toestemming van anderen:
+   
+   * een eigen internet-toepassing kunt maken
+   * een eigen protocol voor een toepassing kunt gebruiken
+   * zelf domeinnamen kunt uitdelen
+   * zelf IP-adressen kunt uitdelen
+   * berichten versleuteld over het internet kunt sturen
+   
+     * OK.
 
 .. mchoice:: prot-e2e-mc-3
   :correct: a

@@ -1,5 +1,5 @@
 ************************
-Voorbeeld: watersproeier
+Voorbeeld: Watersproeier
 ************************
 
 Als voorbeeld van een IoT-toepassingen kijken we naar het besproeien van een sportveld.
@@ -194,19 +194,24 @@ Toetsvragen
     * Met een *actuator* verander je een fysische grootheid
 ..
 
-.. mchoicem:: vraag1-VBW-2
-   :answer_a: een controller bestuurt de sensoren en actuatoren bij het "ding"
-   :answer_b: een IoT-knoop bevat altijd sensoren en actuatoren
-   :answer_c: een IoT-knoop bevat altijd een controller
-   :answer_d: een IoT-knoop is altijd draadloos verbonden aan het internet
-   :correct: a, c
-   :feedback_a: Ja.
-   :feedback_b: Een IoT-knoop kan ook alleen sensoren of actuatoren bevatten.
-   :feedback_c: Ja.
-   :feedback_d: Een IoT-knoop kan ook bedraad zijn
+.. mchoice:: vraag1-VBW-2
+  :correct: a,c
 
-   Welke van de onderstaande uitspraken is waar?
+  Welke van de onderstaande uitspraken is waar?
 
+  * een controller bestuurt de sensoren en actuatoren bij het "ding"
+
+    * Ja.
+  * een IoT-knoop bevat altijd sensoren en actuatoren
+  
+    * Een IoT-knoop kan ook alleen sensoren of actuatoren bevatten.
+  * een IoT-knoop bevat altijd een controller
+  
+    * Ja.
+  * een IoT-knoop is altijd draadloos verbonden aan het internet
+  
+    * Een IoT-knoop kan ook bedraad zijn
+  * ik weet het niet meer...
 ..
 
 
@@ -251,35 +256,47 @@ Toetsvragen
 
 ..
 
-.. mchoicem:: vraag-VBW-4
-  :answer_a: drukknop
-  :answer_b: relais
-  :answer_c: barometer
-  :answer_d: klep
+.. mchoice:: vraag-VBW-4
   :correct: b,d
-  :feedback_a: Een drukknop zet beweging om in informatie (sensor)
-  :feedback_b: Een relais is een elektrische schakelaar bestuurd door informatie (actuator)
-  :feedback_c: Een barometer zet luchtdruk om in informatie (sensor)
-  :feedback_d: Een klep zet informatie om in beweging: open/dicht (actuator)
 
   Welke van de onderstaande apparaten zijn actuatoren?
+  
+  * drukknop
+  
+    * Een drukknop zet beweging om in informatie (sensor)
+  * relais
+  
+    * Een relais is een elektrische schakelaar bestuurd door informatie (actuator)
+  * barometer
+  
+    * Een barometer zet luchtdruk om in informatie (sensor)
+  * klep
+  
+    * Een klep zet informatie om in beweging: open/dicht (actuator)
 
 ..
 
-.. mchoicem:: vraag-VBW-5
-  :answer_a: microfoon
-  :answer_b: luidspreker
-  :answer_c: controller
-  :answer_d: GPS-ontvanger
-  :answer_e: servomotor
+.. mchoice:: vraag-VBW-5
   :correct: a,d
-  :feedback_a: Een microfoon zet geluid om in informatie (sensor)
-  :feedback_b: Een luidspreker zet informatie om in geluid (actuator)
-  :feedback_c: Een controller is een besturingscomputer (geen sensor of actuator)
-  :feedback_d: Een GPS-ontvanger zet een positie om in informatie (sensor)
-  :feedback_e: Een servomotor zet informatie om in een hoekverdraaiing (actuator)
+
 
   Welke van de onderstaande apparaten zijn sensoren?
+  
+  * microfoon
+  
+    * Een microfoon zet geluid om in informatie (sensor)
+  * luidspreker
+  
+    * Een luidspreker zet informatie om in geluid (actuator)
+  * controller
+  
+    * Een controller is een besturingscomputer (geen sensor of actuator)
+  * GPS-ontvanger
+  
+    * Een GPS-ontvanger zet een positie om in informatie (sensor)
+  * servomotor
+  
+    * Een servomotor zet informatie om in een hoekverdraaiing (actuator)
 
 ..
 

@@ -79,18 +79,15 @@ Hoe verhouden het web, het internet en het internet of things zich?
     * Nee - het internet of things gebruikt andere protocollen (MQTT etc.) dan het web (HTTP)
 :::
 
-:::{mchoicexxx} vraag1-VB-3
-   :answer_a: een controller bestuurt de sensoren en actuatoren bij het "ding"
-   :answer_b: een IoT-knoop bevat altijd sensoren en actuatoren
-   :answer_c: een IoT-knoop bevat altijd een controller
-   :answer_d: een IoT-knoop is altijd draadloos verbonden aan het internet
-   :correct: a, c
-   :feedback_a: Ja.
-   :feedback_b: Een IoT-knoop kan ook alleen sensoren of actuatoren bevatten.
-   :feedback_c: Ja.
-   :feedback_d: Een IoT-knoop kan ook bedraad zijn
+:::{mchoice} vraag1-VB-3
+:correct: a,c
 
    Welke van de onderstaande uitspraken is waar?
+      
+   * een controller bestuurt de sensoren en actuatoren bij het "ding"
+   * een IoT-knoop bevat altijd sensoren en actuatoren
+   * een IoT-knoop bevat altijd een controller
+   * een IoT-knoop is altijd draadloos verbonden aan het internet  
 
 :::
 
@@ -122,7 +119,7 @@ Plaats de termen bij hun beschrijving.
 :::
 
 
-:::{dragndropxxx} dnd-ex-3
+:::{dragndrop} dnd-ex-3
 
 Welke bitrate hoort (ongeveer) bij welk soort signaal?
 (Neem in het "temperatuur"-geval aan dat dit een kamerthermostaat betreft die elke 2 minuten de temperatuur meet.)
@@ -152,8 +149,9 @@ WiFi
 
 :::
 
-:::{mchoicexxx} vraag1_ya
+:::{mchoice} vraag1_ya
 :correct: d
+:multiple:
 
 Je kunt berichten versleutelen op verschillende protocol-niveaus.
 In welk geval is er sprake van end-to-end encryptie?
@@ -175,19 +173,25 @@ In welk geval is er sprake van end-to-end encryptie?
 
 ..
 
-:::{mchoicexxx} vraag1_xyb
-   :answer_a: WiFi
-   :answer_b: Internet Protocol (IP)
-   :answer_c: Transport Control Protocol (TCP)
-   :answer_d: HyperText Transfer Protocol (HTTP)
-   :correct: c, d
-   :feedback_a: WiFi is een Link-layer protocol in het lokale netwerk
-   :feedback_b: IP is het basis netwerk-procotol van het internet - in het netwerk
-   :feedback_c: TCP is het end-to-end transport-protocol van het internet
-   :feedback_d: HTTP is het end-to-end toepassingsprotocol van het web, op basis van het internet.
+:::{mchoice} vraag1_xyb
+:correct: c,d
+
 
    Welke van deze protocollen zijn *end-to-end*, en vind je alleen in de eindpunten,
    en niet in het netwerk?
+   
+   * WiFi
+   
+     *  WiFi is een Link-layer protocol in het lokale netwerk
+   * Internet Protocol (IP)
+   
+     * IP is het basis netwerk-procotol van het internet - in het netwerk
+   * Transport Control Protocol (TCP)
+   
+     * TCP is het end-to-end transport-protocol van het internet
+   * HyperText Transfer Protocol (HTTP)
+   
+     * HTTP is het end-to-end toepassingsprotocol van het web, op basis van het internet.
 :::
 
 :::{shortanswer} WiFi-monitor

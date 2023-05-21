@@ -93,7 +93,7 @@ In de volgende hoofdstukken zullen we de bouwstenen daarvoor behandelen.
 Toetsvragen
 -----------
 
-.. mchoicem:: IoT-020
+.. mchoice:: IoT-020
    :correct: a,b,d
 
    Wat is de functie van de Hue Bridge (meerdere antwoorden mogelijk).
@@ -105,14 +105,15 @@ Toetsvragen
 
 ..
 
-.. mchoicem:: IoT-021
-   :answer_a: verbinding tussen de Bridge en de mobiele app
-   :answer_b: verbinding tussen de Bridge en externe diensten
-   :answer_c: software-updates voor de Bridge en de lampen
-   :answer_d: controller voor het verbinden van de lampen en de schakelaars
+.. mchoice:: IoT-021
    :correct: a,b,c
 
    Wat is de functie van de Hue server voor het lokale netwerk? (meerdere antwoorden mogelijk)
+   
+   * verbinding tussen de Bridge en de mobiele app
+   * verbinding tussen de Bridge en externe diensten
+   * software-updates voor de Bridge en de lampen
+   * controller voor het verbinden van de lampen en de schakelaars
 
 .. figure:: hue-server-quiz.png
    :width: 500px

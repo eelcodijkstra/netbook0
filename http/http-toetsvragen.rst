@@ -5,25 +5,28 @@ Toetsvragen
 
 Toetsvragen bij het HTTP protocol
 
-.. mchoicem:: mc-http-01
-  :answer_a: de client moet de server kunnen vinden
-  :answer_b: de server moet de client kunnen vinden
-  :answer_c: de client kan op elk moment de server een verzoek (request) sturen
-  :answer_d: de server kan op elk moment de client een response sturen
-  :answer_e: de client moet altijd beschikbaar zijn
+.. mchoice:: mc-http-01
   :correct: a,c
 
-  Welke van de bovenstaande uitspraken gelden voor een client-server interactie?
+  Welke van de onderstaande uitspraken gelden voor een client-server interactie?
+  
+  * de client moet de server kunnen vinden
+  * de server moet de client kunnen vinden
+  * de client kan op elk moment de server een verzoek (request) sturen
+  * de server kan op elk moment de client een response sturen
+  * de client moet altijd beschikbaar zijn
+  
 
-.. mchoicem:: mc-http-02
-  :answer_a: de server moet de client kunnen vinden
-  :answer_b: de server kan op elk moment de client een response sturen
-  :answer_c: de client kan op elk moment de server een verzoek (request) sturen
-  :answer_d: de server moet altijd beschikbaar zijn
-  :answer_e: de client moet altijd beschikbaar zijn
+.. mchoice:: mc-http-02
   :correct: c,d
 
-  Welke van de bovenstaande uitspraken gelden voor een client-server interactie?
+  Welke van de onderstaande uitspraken gelden voor een client-server interactie?
+  
+  * de server moet de client kunnen vinden
+  * de server kan op elk moment de client een response sturen
+  * de client kan op elk moment de server een verzoek (request) sturen
+  * de server moet altijd beschikbaar zijn
+  * de client moet altijd beschikbaar zijn  
 
 .. mchoice:: mc-http-03
   :correct: b

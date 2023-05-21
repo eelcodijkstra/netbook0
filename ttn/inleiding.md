@@ -1,6 +1,11 @@
-****************
-TheThingsNetwork
-****************
+# TheThingsNetwork
+
+:::{admonition} Gevorderd materiaal
+
+Dit hoofdstuk bevat gevorderde stof bedoeld voor leerlingen die meer over LoRaWan en TheThingsNetwork willen weten.
+Dit materiaal helpt je bij het configureren van TTN toepassingen en de bijbehorende IoT-knopen.
+
+:::
 
 TheThingsNetwork (TTN) is één van de LoRaWan-providers in Nederland.
 TTN is een bijzondere organisatie: iedereen kan meedoen in het TTN-netwerk,

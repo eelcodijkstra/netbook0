@@ -95,4 +95,4 @@ dit hangt voor een belangrijk deel af van de vindingrijheid van de bedenkers.
 Een toepassing zoals Facebook was al veel eerder mogelijk:
 het bedenken van nieuwe toepassingen en het uitvoeren daarvan hangt niet alleen van de technologie af,
 maar ook van de ideeën om iets zinvols met die technologie te doen.
-Vooral het komende decennium (2020-2030) biedt hiervoor grote mogelijkheden.
+Vooral het huidige decennium (2020-2030) biedt hiervoor grote mogelijkheden.

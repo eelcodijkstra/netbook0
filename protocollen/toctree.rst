@@ -1,27 +1,6 @@
 Protocollen
 ===========
 
-.. toctree::
-  :maxdepth: 1
-
-  inleiding.rst
-  stapelen.rst
-  internet-stack.rst
-  protocol-3a.rst
-  protocol-4.rst
-  protocol-8.rst
-  protocol-9.rst
-  protocol-10.rst
-  interactie.rst
-  pakketcommunicatie.rst
-  verbindingen.rst
-  client-server.rst
-  publish-subscribe.rst
-  toetsvragen.md
-  nodered/nodered-opdrachten.rst
-
-
-
 .. rubric:: Samenvatting
 
 Wat zijn belangrijke punten?

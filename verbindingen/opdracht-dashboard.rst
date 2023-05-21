@@ -72,12 +72,13 @@ Handleiding voor de dashboard-app:
    "elders" werkende IoT-knoop.)
 
 .. mchoice:: h1-mc-dashboard
-   :answer_a: Met de dashboard-knoppen kan ik de simulator-led aan- en uitzetten.
-   :answer_b: Ik zie in het dashboard de veranderingen in de sensorwaarden van de simulator.
-   :answer_c: Ik kan in het dashboard de gegevens van een hardware-knoop bekijken.
    :correct: a,b,c
 
    Geef aan welke onderdelen gelukt zijn.
+   
+   * Met de dashboard-knoppen kan ik de simulator-led aan- en uitzetten.
+   * Ik zie in het dashboard de veranderingen in de sensorwaarden van de simulator.
+   * Ik kan in het dashboard de gegevens van een hardware-knoop bekijken.   
 
 .. shortanswer:: h1-sa-dashboard
 

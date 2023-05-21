@@ -1,15 +1,18 @@
-Inleiding
-=========
+# HTTP in het IoT
 
-.. figure:: IoT-chain-communication-HTTP.png
-   :width: 700px
-   :align: center
 
-.. admonition:: begrippen en leerdoelen
+:::{figure} IoT-chain-communication-HTTP.png
+:width: 700px
+:align: center
 
-  webserver voor apparaat-besturing; apparaat-configuratie;
-  web-API; API-key; JSON;
+:::
 
+:::{admonition} begrippen en leerdoelen
+
+webserver voor apparaat-besturing; apparaat-configuratie;
+web-API; API-key; JSON;
+
+:::
 
 In het Internet of Things kom je HTTP protocol op verschillende plaatsen tegen:
 

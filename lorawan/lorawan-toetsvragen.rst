@@ -1,16 +1,17 @@
 Toetsvragen LoRaWan
 -------------------
 
-.. mchoicem:: mc-7-1-1
-   :answer_a: parkeerplaatsbewaking
-   :answer_b: slimme deurbel met camera
-   :answer_c: besturing van verlichting thuis (domotica)
-   :answer_d: besturing van straatverlichting
-   :answer_e: GPS-tracker van vee
+.. mchoice:: mc-7-1-1
    :correct: b,c
 
    Voor welke van de onderstaande toepassingen is LoRaWan *geen* geschikte technologie?
    Verklaar je antwoord(en) hieronder.
+   
+   * parkeerplaatsbewaking
+   * slimme deurbel met camera
+   * besturing van verlichting thuis (domotica)
+   * besturing van straatverlichting
+   * GPS-tracker van vee  
 
 .. shortanswer:: short-7-1-1
 
@@ -18,15 +19,16 @@ Toetsvragen LoRaWan
 
 ..
 
-.. mchoicem:: mc-7-1-2
-   :answer_a: luchtkwaliteitsmeting
-   :answer_b: afluisterapparatuur
-   :answer_c: besturing van een robot
-   :answer_d: GPS-tracker van snelle voertuigen
+.. mchoice:: mc-7-1-2
    :correct: b,c,d
 
    Voor welke van de onderstaande toepassingen is LoRaWan *geen* geschikte technologie?
    Verklaar je antwoord(en) hieronder.
+   
+   * luchtkwaliteitsmeting
+   * afluisterapparatuur
+   * besturing van een robot
+   * GPS-tracker van snelle voertuigen   
 
 .. shortanswer:: short-7-1-2
 
@@ -49,16 +51,17 @@ Toetsvragen LoRaWan
     * grote batterijen in de IoT-devices
     * een lage bitrate (bits/s)
 
-.. mchoicem:: mc-7-1-5
-    :answer_a: zenden met beperkt vermogen (typisch max. 25 mW)
-    :answer_b: beperkte zendtijd (duty-cycle) - typisch max. 1%
-    :answer_c: maximale grootte van de antenne’s
-    :answer_d: zenden alleen met een zendvergunning
-    :answer_e: beperkte bitrate (bits/s)
+.. mchoice:: mc-7-1-5
     :correct: a,b
 
     LoRa maakt gebruik van vrije (gratis te gebruiken) radiobanden.
     Welke beperkingen zijn opgelegd aan het gebruik van deze radiobanden?
+    
+    * zenden met beperkt vermogen (typisch max. 25 mW)
+    * beperkte zendtijd (duty-cycle) - typisch max. 1%
+    * maximale grootte van de antenne’s
+    * zenden alleen met een zendvergunning
+    * beperkte bitrate (bits/s)    
 
 .. shortanswer:: short-7-1-6
 
@@ -92,26 +95,29 @@ Toetsvragen LoRaWan
   
     * Wan
 
-.. mchoicem:: mc-7-1-8
-   :answer_a: IoT-devices
-   :answer_b: LoRaWan-gateway
-   :answer_c: LoRaWan Network server
-   :answer_d: LoRaWan Application server
+.. mchoice:: mc-7-1-8
    :correct: a,d
 
    LoRaWan wordt veilig ("secure") genoemd vanwege de end-to-end encryptie.
    Wat betekent dit?
    Welke apparaten kunnen de berichten ontsleutelen?
+   
+   * IoT-devices
+   * LoRaWan-gateway
+   * LoRaWan Network server
+   * LoRaWan Application server
 
-.. mchoicem:: mc-7-1-9
-   :answer_a: een groter bereik
-   :answer_b: een kleiner bereik
-   :answer_c: meer berichten per uur mogelijk
-   :answer_d: minder berichten per uur mogelijk
-   :answer_e: kortere batterij-levensduur voor het IoT-device
+.. mchoice:: mc-7-1-9
    :correct: a,d,e
 
    LoRa-radioberichten verstuurd met SF12 hebben ten opzichte van SF7-berichten de volgende eigenschappen:
+
+   * een groter bereik
+   * een kleiner bereik
+   * meer berichten per uur mogelijk
+   * minder berichten per uur mogelijk
+   * kortere batterij-levensduur voor het IoT-device
+   
 
 .. dragndrop:: dd-7-1-10
 
